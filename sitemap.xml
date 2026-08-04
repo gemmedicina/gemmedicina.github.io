@@ -1,1 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://gemmedicina.com.br/</loc></url><url><loc>https://gemmedicina.com.br/apps/handgrip-little/</loc></url><url><loc>https://gemmedicina.com.br/apps/handgrip-little/suporte/</loc></url><url><loc>https://gemmedicina.com.br/apps/handgrip-little/privacidade/</loc></url><url><loc>https://gemmedicina.com.br/contato/</loc></url></urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://gemmedicina.com.br/</loc>
+  </url>
+
+  <url>
+    <loc>https://gemmedicina.com.br/contato/</loc>
+  </url>
+</urlset>
