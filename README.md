@@ -41,15 +41,15 @@ A versão atual do Handgrip Light processa localmente as informações inseridas
 - Faça o merge na `main` somente após a revisão e a aprovação das mudanças.
 - Não remova nem substitua `CNAME` durante a publicação dos arquivos na raiz do repositório.
 
-## Pré-lançamento do Handgrip Light
+## Lançamento do Handgrip Light
 
-O controle de indexação do aplicativo é deliberado enquanto ele está em pré-lançamento:
+O aplicativo está publicado na App Store e sua página de produto é pública:
 
-- `robots.txt` restringe o rastreamento de `/apps/handgrip-little/`;
-- as diretivas `noindex`/`nofollow` das páginas aplicáveis evitam sua indexação pública; e
-- `sitemap.xml` inclui apenas as páginas que devem ser divulgadas aos mecanismos de busca.
+- `robots.txt` permite o rastreamento de `/apps/handgrip-little/`;
+- a página do produto não contém diretivas `noindex`/`nofollow`; e
+- `sitemap.xml` inclui a URL pública do produto.
 
-Esses itens formam uma única estratégia e **não devem ser alterados ou “corrigidos” automaticamente**. A indexação pública do Handgrip Light só deve mudar após uma decisão expressa de lançamento; nesse momento, revise em conjunto `robots.txt`, as meta tags de robôs e `sitemap.xml`.
+Esses itens formam uma única estratégia de indexação e devem permanecer coerentes em alterações futuras.
 
 ## Validação local
 

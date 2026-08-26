@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 
-Disallow: /apps/handgrip-little/
+Allow: /apps/handgrip-little/
 
 Sitemap: https://gemmedicina.com.br/sitemap.xml
