@@ -3,14 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-
   <title>Handgrip Light | GEM Medicina e Pesquisa</title>
 
   <meta
     name="description"
-    content="Handgrip Light — ferramenta de apoio à avaliação da força de preensão palmar com EWGSOP2, posição percentílica de referência e resumo A4."
+    content="Handgrip Light: percentis de força de preensão por sexo e idade, EWGSOP2, curvas normativas e resumo A4. Disponível na App Store."
   >
+
+  <link rel="canonical" href="https://gemmedicina.com.br/apps/handgrip-little/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GEM Medicina e Pesquisa">
+  <meta property="og:title" content="Handgrip Light | Disponível na App Store">
+  <meta property="og:description" content="Interprete a força de preensão com percentis por sexo e idade, EWGSOP2, curvas normativas e resumo A4 em PT ou EN.">
+  <meta property="og:url" content="https://gemmedicina.com.br/apps/handgrip-little/">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
@@ -54,6 +62,48 @@
       font-size: 1.15rem;
       line-height: 1.65;
       color: #52606d;
+    }
+
+    .product-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 180px;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .status {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: #e8f3ef;
+      color: #2d765f;
+      font-size: 0.78rem;
+      font-weight: 750;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .qr-code {
+      padding: 14px;
+      border: 1px solid #e2e7ec;
+      border-radius: 16px;
+      background: #ffffff;
+      text-align: center;
+      color: #52606d;
+      font-size: 0.8rem;
+    }
+
+    .qr-code img {
+      display: block;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 8px;
+    }
+
+    .measurement-note {
+      border-left: 4px solid #2f7d67;
+      background: #edf6f3;
     }
 
     .card {
@@ -161,6 +211,12 @@
       color: #677381;
       font-size: 0.9rem;
     }
+
+    @media (max-width: 680px) {
+      main { padding: 36px 20px; }
+      .product-intro { grid-template-columns: 1fr; }
+      .qr-code { display: none; }
+    }
   </style>
 </head>
 
@@ -180,11 +236,26 @@
 
       <h1>Handgrip Light</h1>
 
-      <p class="lead">
-        Ferramenta de apoio à avaliação da força de preensão palmar em adultos,
-        combinando os pontos de corte do EWGSOP2 com a contextualização pela
-        posição percentílica de referência.
-      </p>
+      <div class="product-intro">
+        <div>
+          <span class="status">Disponível na App Store</span>
+          <p class="lead">
+            Interprete a força de preensão além dos pontos de corte: percentis por sexo e idade, EWGSOP2, curvas normativas e resumo A4 em PT ou EN. Requer dinamômetro externo.
+          </p>
+          <a class="button" href="https://apps.apple.com/app/id6797272425" target="_blank" rel="noopener noreferrer">
+            Baixar na App Store
+          </a>
+        </div>
+        <div class="qr-code">
+          <img src="/apps/handgrip-little/app-store-qr.svg" alt="QR Code para baixar o Handgrip Light na App Store" width="150" height="150">
+          Escaneie para baixar
+        </div>
+      </div>
+
+      <div class="card measurement-note">
+        <h2>Como a medição funciona</h2>
+        <p>O Handgrip Light não mede diretamente a força. A medição requer um dinamômetro de preensão manual externo, e os valores obtidos são inseridos manualmente no aplicativo.</p>
+      </div>
 
       <div class="card">
         <h2>Principais recursos</h2>
@@ -255,11 +326,26 @@
 
       <h1>Handgrip Light</h1>
 
-      <p class="lead">
-        An assessment support tool for adult handgrip strength, combining
-        EWGSOP2 cutoff points with contextualization based on reference
-        percentile position.
-      </p>
+      <div class="product-intro">
+        <div>
+          <span class="status">Available on the App Store</span>
+          <p class="lead">
+            Interpret handgrip strength beyond binary cutoffs: percentiles by sex and age, EWGSOP2, normative curves, and an A4 summary in PT/EN. External dynamometer required.
+          </p>
+          <a class="button" href="https://apps.apple.com/app/id6797272425" target="_blank" rel="noopener noreferrer">
+            Download on the App Store
+          </a>
+        </div>
+        <div class="qr-code">
+          <img src="/apps/handgrip-little/app-store-qr.svg" alt="QR code to download Handgrip Light on the App Store" width="150" height="150">
+          Scan to download
+        </div>
+      </div>
+
+      <div class="card measurement-note">
+        <h2>How measurement works</h2>
+        <p>Handgrip Light does not measure strength directly. Measurement requires an external handgrip dynamometer, and the values obtained are entered manually in the app.</p>
+      </div>
 
       <div class="card">
         <h2>Key features</h2>
@@ -340,8 +426,8 @@
       const description = document.querySelector('meta[name="description"]');
 
       const descriptions = {
-        pt: "Handgrip Light — ferramenta de apoio à avaliação da força de preensão palmar com EWGSOP2, posição percentílica de referência e resumo A4.",
-        en: "Handgrip Light — an assessment support tool for adult handgrip strength with EWGSOP2 cutoffs, reference percentiles, and an A4 summary."
+        pt: "Handgrip Light: percentis de força de preensão por sexo e idade, EWGSOP2, curvas normativas e resumo A4. Disponível na App Store.",
+        en: "Handgrip Light: handgrip-strength percentiles by sex and age, EWGSOP2, normative curves, and an A4 summary. Available on the App Store."
       };
 
       function setLanguage(language) {
