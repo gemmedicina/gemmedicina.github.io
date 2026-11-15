@@ -7,7 +7,7 @@
 
   <meta
     name="description"
-    content="Handgrip Light: percentis de força de preensão por sexo e idade, EWGSOP2, curvas normativas e resumo A4. Disponível na App Store."
+    content="Handgrip Light: força de preensão, percentis por sexo e idade, EWGSOP2, HGS/estatura², HGS/IMC e relatório PDF A4. Disponível para iOS."
   >
 
   <link rel="canonical" href="https://gemmedicina.com.br/apps/handgrip-little/">
@@ -15,7 +15,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="GEM Medicina e Pesquisa">
   <meta property="og:title" content="Handgrip Light | Disponível na App Store">
-  <meta property="og:description" content="Interprete a força de preensão com percentis por sexo e idade, EWGSOP2, curvas normativas e resumo A4 em PT ou EN.">
+  <meta property="og:description" content="Avaliação de força de preensão: percentis por sexo e idade, critérios EWGSOP2, índices complementares e relatório PDF A4 em português ou inglês.">
   <meta property="og:url" content="https://gemmedicina.com.br/apps/handgrip-little/">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:locale:alternate" content="en_US">
@@ -217,6 +217,40 @@
       .product-intro { grid-template-columns: 1fr; }
       .qr-code { display: none; }
     }
+
+    /* Visual refinement — institutional GEM identity; no external assets */
+    :root { color-scheme: light; --navy:#173f73; --ink:#182b40; --muted:#50647a; --line:#dce5ee; }
+    body { background:linear-gradient(180deg,#edf3f9 0,#f7f9fc 370px,#f7f9fc 100%); color:var(--ink); }
+    main { max-width:1040px; padding:36px 36px 70px; }
+    .language-switch { margin-bottom:54px; }
+    .eyebrow { font-size:.8rem; letter-spacing:.13em; }
+    h1 { font-size:clamp(2.9rem,7vw,5rem); letter-spacing:-.045em; line-height:1.02; }
+    .product-intro { grid-template-columns:minmax(0,1fr) 184px; gap:46px; padding:12px 0 32px; }
+    .lead { font-size:1.17rem; line-height:1.75; max-width:690px; }
+    .status { background:#e2f1eb; border:1px solid #c6e3d5; }
+    .qr-code { border-color:var(--line); box-shadow:0 12px 32px rgba(25,53,81,.06); }
+    .card { border:1px solid var(--line); border-radius:20px; padding:32px 36px; box-shadow:0 8px 28px rgba(28,54,79,.035); }
+    .card h2 { color:var(--navy); font-size:1.33rem; letter-spacing:-.015em; }
+    .card p, .card li { line-height:1.8; }
+    .measurement-note { background:#edf7f3; border-left:4px solid #2f7d67; }
+    .button { padding:13px 20px; border-radius:11px; box-shadow:0 5px 14px rgba(23,63,115,.12); transition:background .2s,transform .2s; }
+    .button:hover { background:#24568f; transform:translateY(-1px); }
+    .button.secondary { box-shadow:none; }
+    .button.secondary:hover { background:#eaf1f8; }
+    .language-button:hover { border-color:var(--navy); }
+    .reference-note { border-top:1px solid var(--line); padding-top:16px; }
+    footer { margin-top:60px; }
+    @media(max-width:680px) {
+      main { padding:22px 20px 52px; }
+      .language-switch { margin-bottom:38px; }
+      .product-intro { grid-template-columns:1fr; gap:12px; }
+      .qr-code { display:none; }
+      .lead { font-size:1.06rem; }
+      .card { padding:23px 21px; margin-top:20px; border-radius:16px; }
+      .links { gap:10px; }
+      .button { text-align:center; }
+    }
+    @media(prefers-reduced-motion:reduce) { .button { transition:none; } }
   </style>
 </head>
 
@@ -460,8 +494,8 @@
       const description = document.querySelector('meta[name="description"]');
 
       const descriptions = {
-        pt: "Handgrip Light: percentis de força de preensão por sexo e idade, EWGSOP2, curvas normativas e resumo A4. Disponível na App Store.",
-        en: "Handgrip Light: handgrip-strength percentiles by sex and age, EWGSOP2, normative curves, and an A4 summary. Available on the App Store."
+        pt: "Handgrip Light: percentis por sexo e idade, EWGSOP2, HGS/estatura², HGS/IMC e relatório A4. Disponível para iOS.",
+        en: "Handgrip Light: sex- and age-specific percentiles, EWGSOP2, HGS/height², HGS/BMI and an A4 PDF report. Available for iOS."
       };
 
       function setLanguage(language) {
