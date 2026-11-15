@@ -7,7 +7,7 @@
 
   <meta
     name="description"
-    content="Handgrip Light: percentis de força de preensão por sexo e idade, EWGSOP2, curvas normativas e resumo A4. Disponível na App Store."
+    content="Handgrip Light: força de preensão, percentis por sexo e idade, EWGSOP2, HGS/estatura², HGS/IMC e relatório PDF A4. Disponível para iOS."
   >
 
   <link rel="canonical" href="https://gemmedicina.com.br/apps/handgrip-little/">
@@ -15,7 +15,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="GEM Medicina e Pesquisa">
   <meta property="og:title" content="Handgrip Light | Disponível na App Store">
-  <meta property="og:description" content="Interprete a força de preensão com percentis por sexo e idade, EWGSOP2, curvas normativas e resumo A4 em PT ou EN.">
+  <meta property="og:description" content="Avaliação de força de preensão: percentis por sexo e idade, critérios EWGSOP2, índices complementares e relatório PDF A4 em português ou inglês.">
   <meta property="og:url" content="https://gemmedicina.com.br/apps/handgrip-little/">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:locale:alternate" content="en_US">
@@ -176,6 +176,8 @@
       border-color: #173f73;
     }
 
+    a:focus-visible { outline:3px solid rgba(23,63,115,.4); outline-offset:3px; }
+
     .language-button:focus-visible {
       outline: 3px solid rgba(23, 63, 115, 0.25);
       outline-offset: 2px;
@@ -217,6 +219,46 @@
       .product-intro { grid-template-columns: 1fr; }
       .qr-code { display: none; }
     }
+
+    /* Visual refinement — institutional GEM identity */
+    :root { color-scheme: light; --navy:#173f73; --ink:#182b40; --muted:#50647a; --line:#dce5ee; }
+    body { background:linear-gradient(180deg,#edf3f9 0,#f7f9fc 370px,#f7f9fc 100%); color:var(--ink); }
+    main { max-width:1040px; padding:36px 36px 70px; }
+    .language-switch { margin-bottom:54px; }
+    .eyebrow { font-size:.8rem; letter-spacing:.13em; }
+    h1 { font-size:clamp(2.9rem,7vw,5rem); letter-spacing:-.045em; line-height:1.02; }
+    .product-intro { grid-template-columns:minmax(0,1fr) 184px; gap:46px; padding:12px 0 32px; }
+    .product-heading { display:flex; align-items:center; gap:22px; margin-bottom:20px; }
+    .app-icon { display:block; width:112px; height:112px; object-fit:cover; border-radius:25px; box-shadow:0 10px 30px rgba(25,53,81,.12); flex-shrink:0; }
+    .product-heading h1 { margin:0; }
+    .lead { font-size:1.17rem; line-height:1.75; max-width:690px; }
+    .status { background:#e2f1eb; border:1px solid #c6e3d5; }
+    .qr-code { border-color:var(--line); box-shadow:0 12px 32px rgba(25,53,81,.06); }
+    .card { border:1px solid var(--line); border-radius:20px; padding:32px 36px; box-shadow:0 8px 28px rgba(28,54,79,.035); }
+    .card h2 { color:var(--navy); font-size:1.33rem; letter-spacing:-.015em; }
+    .card p, .card li { line-height:1.8; }
+    .measurement-note { background:#edf7f3; border-left:4px solid #2f7d67; }
+    .button { padding:13px 20px; border-radius:11px; box-shadow:0 5px 14px rgba(23,63,115,.12); transition:background .2s,transform .2s; }
+    .button:hover { background:#24568f; transform:translateY(-1px); }
+    .button.secondary { box-shadow:none; }
+    .button.secondary:hover { background:#eaf1f8; }
+    .language-button:hover { border-color:var(--navy); }
+    .reference-note { border-top:1px solid var(--line); padding-top:16px; }
+    footer { margin-top:60px; }
+    @media(max-width:680px) {
+      main { padding:22px 20px 52px; }
+      .language-switch { margin-bottom:38px; }
+      .product-intro { grid-template-columns:1fr; gap:12px; }
+      .product-heading { gap:15px; }
+      .app-icon { width:74px; height:74px; border-radius:18px; }
+      .product-heading h1 { font-size:clamp(2.1rem,8vw,3rem); }
+      .qr-code { display:none; }
+      .lead { font-size:1.06rem; }
+      .card { padding:23px 21px; margin-top:20px; border-radius:16px; }
+      .links { gap:10px; }
+      .button { text-align:center; }
+    }
+    @media(prefers-reduced-motion:reduce) { .button { transition:none; } }
   </style>
 </head>
 
@@ -234,20 +276,23 @@
     <section id="language-pt" lang="pt-BR">
       <p class="eyebrow">GEM Medicina e Pesquisa</p>
 
-      <h1>Handgrip Light</h1>
+      <div class="product-heading">
+        <img class="app-icon" src="./ChatGPT%20Image%202%20de%20ago.%20de%202026%2C%2012_06_42.png" alt="Ícone do aplicativo Handgrip Light" width="112" height="112">
+        <h1>Handgrip Light</h1>
+      </div>
 
       <div class="product-intro">
         <div>
           <span class="status">Disponível na App Store</span>
           <p class="lead">
-            Interprete a força de preensão além dos pontos de corte: percentis por sexo e idade, EWGSOP2, curvas normativas e resumo A4 em PT ou EN. Requer dinamômetro externo.
+            Da força absoluta à interpretação percentílica: percentis por sexo e idade, critérios EWGSOP2 e índices complementares HGS/estatura² e HGS/IMC. Relatório A4 em português ou inglês. Requer dinamômetro externo.
           </p>
           <a class="button" href="https://apps.apple.com/app/id6797272425" target="_blank" rel="noopener noreferrer">
             Baixar na App Store
           </a>
         </div>
         <div class="qr-code">
-          <img src="/apps/handgrip-little/app-store-qr.svg" alt="QR Code para baixar o Handgrip Light na App Store" width="150" height="150">
+          <img src="./app-store-qr.svg" alt="QR Code para baixar o Handgrip Light na App Store" width="150" height="150">
           Escaneie para baixar
         </div>
       </div>
@@ -261,14 +306,22 @@
         <h2>Principais recursos</h2>
 
         <ul>
-          <li>classificação segundo os pontos de corte do EWGSOP2;</li>
-          <li>posição percentílica de referência por sexo e faixa etária;</li>
+          <li>comparação com os pontos de corte EWGSOP2 para baixa força muscular (abaixo de 27 kg em homens e abaixo de 16 kg em mulheres);</li>
+          <li>posição percentílica de referência por sexo e idade, com base em Tomkinson et al. (2025);</li>
+          <li>percentil de HGS/estatura² ajustado por sexo e idade e relação HGS/IMC com comparação descritiva aos limiares FNIH, sem interpretação diagnóstica isolada;</li>
+          <li>até três tentativas por mão, utilizando o maior valor informado;</li>
           <li>curvas normativas ao longo da vida adulta;</li>
           <li>interpretação contextual do resultado;</li>
-          <li>resumo A4 em PDF;</li>
+          <li>relatório individual de uma página A4 em PDF;</li>
           <li>interface em português e inglês;</li>
           <li>processamento local, sem transmissão dos dados inseridos ao desenvolvedor ou a servidores do aplicativo.</li>
         </ul>
+      </div>
+
+      <div class="card">
+        <h2>Interpretação dos resultados</h2>
+        <p>Os percentis contextualizam a força de preensão em relação a valores de referência por sexo e idade. O percentil HGS/estatura² acrescenta uma comparação ajustada pela estatura, enquanto HGS/IMC oferece uma relação descritiva com o IMC. Esses índices não demonstram, isoladamente, melhor saúde muscular ou menor risco clínico. Os pontos de corte EWGSOP2 foram propostos para avaliação de sarcopenia em pessoas idosas e devem ser interpretados com cautela fora desse contexto.</p>
+        <p>O aplicativo apoia a avaliação e não estabelece, isoladamente, o diagnóstico de sarcopenia. Resultados obtidos com instrumentos ou protocolos diferentes dos usados nas referências normativas exigem interpretação cautelosa.</p>
       </div>
 
       <div class="card reference">
@@ -306,6 +359,21 @@
         </p>
       </div>
 
+      <div class="card reference">
+        <h2>Referências complementares — EWGSOP2 e FNIH</h2>
+        <p><strong>Cruz-Jentoft AJ, Bahat G, Bauer J, et al.</strong> <em>Sarcopenia: revised European consensus on definition and diagnosis.</em> <cite>Age Ageing.</cite> 2019;48(1):16–31.</p>
+        <p><a href="https://doi.org/10.1093/ageing/afy169" target="_blank" rel="noopener noreferrer">Artigo e DOI — EWGSOP2</a></p>
+        <p><strong>Alley DE, Shardell MD, Peters KW, et al.</strong> <em>Grip strength cutpoints for the identification of clinically relevant weakness.</em> <cite>J Gerontol A Biol Sci Med Sci.</cite> 2014;69(5):559–566.</p>
+        <p><a href="https://doi.org/10.1093/gerona/glu011" target="_blank" rel="noopener noreferrer">Artigo e DOI — FNIH</a></p>
+      </div>
+
+      <div class="card reference">
+        <h2>Propriedade intelectual</h2>
+        <p>O programa de computador <strong>HANDGRIP</strong> possui registro concedido pelo Instituto Nacional da Propriedade Industrial (INPI), sob o nº <strong>BR 512026006770-7</strong>. Titular: GEM Medicina e Pesquisa Ltda.</p>
+        <p>O registro refere-se ao programa de computador, respeitados os direitos de terceiros e as licenças dos materiais científicos utilizados. Não constitui certificação de eficácia clínica ou aprovação sanitária.</p>
+        <p>© 2026 GEM Medicina e Pesquisa Ltda. Todos os direitos reservados.</p>
+      </div>
+
       <div class="links">
         <a class="button" href="/apps/handgrip-little/suporte/">
           Suporte
@@ -320,20 +388,23 @@
     <section id="language-en" lang="en" hidden>
       <p class="eyebrow">GEM Medicine &amp; Research</p>
 
-      <h1>Handgrip Light</h1>
+      <div class="product-heading">
+        <img class="app-icon" src="./ChatGPT%20Image%202%20de%20ago.%20de%202026%2C%2012_06_42.png" alt="Handgrip Light app icon" width="112" height="112">
+        <h1>Handgrip Light</h1>
+      </div>
 
       <div class="product-intro">
         <div>
           <span class="status">Available on the App Store</span>
           <p class="lead">
-            Interpret handgrip strength beyond binary cutoffs: percentiles by sex and age, EWGSOP2, normative curves, and an A4 summary in PT/EN. External dynamometer required.
+            Beyond binary cutoffs: sex- and age-specific percentiles, EWGSOP2 criteria, and complementary HGS/height² and HGS/BMI indices. One-page A4 report in Portuguese or English. External dynamometer required.
           </p>
           <a class="button" href="https://apps.apple.com/app/id6797272425" target="_blank" rel="noopener noreferrer">
             Download on the App Store
           </a>
         </div>
         <div class="qr-code">
-          <img src="/apps/handgrip-little/app-store-qr.svg" alt="QR code to download Handgrip Light on the App Store" width="150" height="150">
+          <img src="./app-store-qr.svg" alt="QR code to download Handgrip Light on the App Store" width="150" height="150">
           Scan to download
         </div>
       </div>
@@ -347,14 +418,22 @@
         <h2>Key features</h2>
 
         <ul>
-          <li>classification according to EWGSOP2 cutoff points;</li>
-          <li>reference percentile position by sex and age band;</li>
+          <li>comparison with EWGSOP2 low-muscle-strength cutoffs (below 27 kg for men and below 16 kg for women);</li>
+          <li>reference percentile position by sex and age, based on Tomkinson et al. (2025);</li>
+          <li>sex- and age-adjusted HGS/height² percentile and descriptive HGS/BMI comparison with FNIH thresholds, without standalone diagnostic interpretation;</li>
+          <li>up to three attempts per hand, using the highest entered value;</li>
           <li>normative curves across adulthood;</li>
           <li>contextual interpretation of the result;</li>
-          <li>one-page A4 PDF summary;</li>
+          <li>individual one-page A4 PDF report;</li>
           <li>interface available in Portuguese and English;</li>
           <li>local processing, without transmitting entered data to the developer or to app servers.</li>
         </ul>
+      </div>
+
+      <div class="card">
+        <h2>Interpreting the results</h2>
+        <p>Percentiles contextualize handgrip strength against sex- and age-specific reference values. The HGS/height² percentile adds a height-adjusted comparison, while HGS/BMI provides a descriptive relation to BMI. Neither index alone establishes better muscle health or lower clinical risk. EWGSOP2 cutoffs were proposed for sarcopenia assessment in older people and should be interpreted cautiously outside that context.</p>
+        <p>The app supports assessment and does not independently establish a diagnosis of sarcopenia. Results obtained using instruments or protocols different from those in the normative references require cautious interpretation.</p>
       </div>
 
       <div class="card reference">
@@ -391,6 +470,21 @@
         </p>
       </div>
 
+      <div class="card reference">
+        <h2>Additional scientific references — EWGSOP2 and FNIH</h2>
+        <p><strong>Cruz-Jentoft AJ, Bahat G, Bauer J, et al.</strong> <em>Sarcopenia: revised European consensus on definition and diagnosis.</em> <cite>Age Ageing.</cite> 2019;48(1):16–31.</p>
+        <p><a href="https://doi.org/10.1093/ageing/afy169" target="_blank" rel="noopener noreferrer">Article and DOI — EWGSOP2</a></p>
+        <p><strong>Alley DE, Shardell MD, Peters KW, et al.</strong> <em>Grip strength cutpoints for the identification of clinically relevant weakness.</em> <cite>J Gerontol A Biol Sci Med Sci.</cite> 2014;69(5):559–566.</p>
+        <p><a href="https://doi.org/10.1093/gerona/glu011" target="_blank" rel="noopener noreferrer">Article and DOI — FNIH</a></p>
+      </div>
+
+      <div class="card reference">
+        <h2>Intellectual property</h2>
+        <p>The <strong>HANDGRIP</strong> computer program is registered with the Brazilian National Institute of Industrial Property (INPI), under No. <strong>BR 512026006770-7</strong>. Rights holder: GEM Medicina e Pesquisa Ltda.</p>
+        <p>The registration concerns the computer program, subject to third-party rights and licenses for scientific materials used. It does not constitute certification of clinical effectiveness or regulatory approval.</p>
+        <p>© 2026 GEM Medicina e Pesquisa Ltda. All rights reserved.</p>
+      </div>
+
       <div class="links">
         <a class="button" href="/apps/handgrip-little/suporte/">
           Support
@@ -418,8 +512,8 @@
       const description = document.querySelector('meta[name="description"]');
 
       const descriptions = {
-        pt: "Handgrip Light: percentis de força de preensão por sexo e idade, EWGSOP2, curvas normativas e resumo A4. Disponível na App Store.",
-        en: "Handgrip Light: handgrip-strength percentiles by sex and age, EWGSOP2, normative curves, and an A4 summary. Available on the App Store."
+        pt: "Handgrip Light: percentis por sexo e idade, EWGSOP2, HGS/estatura², HGS/IMC e relatório A4. Disponível para iOS.",
+        en: "Handgrip Light: sex- and age-specific percentiles, EWGSOP2, HGS/height², HGS/BMI and an A4 PDF report. Available for iOS."
       };
 
       function setLanguage(language) {
