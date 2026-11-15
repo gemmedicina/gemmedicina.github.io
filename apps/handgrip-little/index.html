@@ -218,7 +218,7 @@
       .qr-code { display: none; }
     }
 
-    /* Visual refinement — institutional GEM identity; no external assets */
+    /* Visual refinement — institutional GEM identity */
     :root { color-scheme: light; --navy:#173f73; --ink:#182b40; --muted:#50647a; --line:#dce5ee; }
     body { background:linear-gradient(180deg,#edf3f9 0,#f7f9fc 370px,#f7f9fc 100%); color:var(--ink); }
     main { max-width:1040px; padding:36px 36px 70px; }
@@ -226,6 +226,9 @@
     .eyebrow { font-size:.8rem; letter-spacing:.13em; }
     h1 { font-size:clamp(2.9rem,7vw,5rem); letter-spacing:-.045em; line-height:1.02; }
     .product-intro { grid-template-columns:minmax(0,1fr) 184px; gap:46px; padding:12px 0 32px; }
+    .product-heading { display:flex; align-items:center; gap:22px; margin-bottom:20px; }
+    .app-icon { display:block; width:112px; height:112px; object-fit:cover; border-radius:25px; box-shadow:0 10px 30px rgba(25,53,81,.12); flex-shrink:0; }
+    .product-heading h1 { margin:0; }
     .lead { font-size:1.17rem; line-height:1.75; max-width:690px; }
     .status { background:#e2f1eb; border:1px solid #c6e3d5; }
     .qr-code { border-color:var(--line); box-shadow:0 12px 32px rgba(25,53,81,.06); }
@@ -244,6 +247,9 @@
       main { padding:22px 20px 52px; }
       .language-switch { margin-bottom:38px; }
       .product-intro { grid-template-columns:1fr; gap:12px; }
+      .product-heading { gap:15px; }
+      .app-icon { width:74px; height:74px; border-radius:18px; }
+      .product-heading h1 { font-size:clamp(2.1rem,8vw,3rem); }
       .qr-code { display:none; }
       .lead { font-size:1.06rem; }
       .card { padding:23px 21px; margin-top:20px; border-radius:16px; }
@@ -268,7 +274,10 @@
     <section id="language-pt" lang="pt-BR">
       <p class="eyebrow">GEM Medicina e Pesquisa</p>
 
-      <h1>Handgrip Light</h1>
+      <div class="product-heading">
+        <img class="app-icon" src="/apps/handgrip-little/ChatGPT%20Image%202%20de%20ago.%20de%202026%2C%2012_06_42.png" alt="Ícone do aplicativo Handgrip Light" width="112" height="112">
+        <h1>Handgrip Light</h1>
+      </div>
 
       <div class="product-intro">
         <div>
@@ -375,7 +384,10 @@
     <section id="language-en" lang="en" hidden>
       <p class="eyebrow">GEM Medicine &amp; Research</p>
 
-      <h1>Handgrip Light</h1>
+      <div class="product-heading">
+        <img class="app-icon" src="/apps/handgrip-little/ChatGPT%20Image%202%20de%20ago.%20de%202026%2C%2012_06_42.png" alt="Handgrip Light app icon" width="112" height="112">
+        <h1>Handgrip Light</h1>
+      </div>
 
       <div class="product-intro">
         <div>
