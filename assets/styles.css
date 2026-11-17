@@ -104,3 +104,7 @@ body.tools-page .calculator-card{scroll-margin-top:110px}
   body.tools-page .calculator-shortcuts a{font-size:.81rem;min-height:36px;padding:6px 10px}
   body.tools-page .calculator-card{scroll-margin-top:150px}
 }
+
+/* Única ferramenta pública: cartão de IMC centralizado em telas amplas. */
+body.tools-page .calculator-list{max-width:780px;margin-left:auto;margin-right:auto}
+body.tools-page .calculator-form.cols-2{max-width:none}
