@@ -75,3 +75,32 @@ body.tools-page .calculator[data-calculator="uacr"] .calculator-form{
     grid-template-columns:minmax(0,1.2fr) minmax(88px,.8fr)
   }
 }
+
+/* Navegação rápida das calculadoras: somente âncoras locais, sem JavaScript. */
+body.tools-page .calculator-shortcuts{
+  display:flex;flex-wrap:wrap;align-items:center;gap:8px;
+  margin-top:15px
+}
+body.tools-page .calculator-shortcuts-label{
+  color:var(--muted);font-size:.84rem;font-weight:750;margin-right:2px
+}
+body.tools-page .calculator-shortcuts a{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:36px;padding:6px 12px;
+  border:1px solid #d2e6df;border-radius:999px;background:#fff;
+  color:var(--navy);font-size:.84rem;line-height:1.3;font-weight:750;
+  text-decoration:none
+}
+body.tools-page .calculator-shortcuts a:hover{
+  background:#e8f3ef;border-color:#83b7a4;color:#1d6954
+}
+body.tools-page .calculator-shortcuts a:focus-visible{
+  outline:3px solid var(--green);outline-offset:2px
+}
+body.tools-page .calculator-card{scroll-margin-top:110px}
+@media(max-width:620px){
+  body.tools-page .calculator-shortcuts{margin-top:12px;gap:6px}
+  body.tools-page .calculator-shortcuts-label{flex-basis:100%;margin:0}
+  body.tools-page .calculator-shortcuts a{font-size:.81rem;min-height:36px;padding:6px 10px}
+  body.tools-page .calculator-card{scroll-margin-top:150px}
+}
