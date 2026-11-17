@@ -12,6 +12,8 @@ Os arquivos do site ficam na raiz do repositório. O arquivo `CNAME` preserva a 
 | --- | --- |
 | `index.html` | Página inicial institucional. |
 | `contato/index.html` | Página de contatos públicos. |
+| `privacidade/index.html` | Aviso de privacidade do site institucional e das calculadoras, separado da política do aplicativo. |
+| `ferramentas/index.html` | Calculadoras clínicas para consulta rápida, com fórmulas e referências identificadas. |
 | `404.html` | Página exibida para endereços não encontrados. |
 | `assets/` | Folhas de estilo, JavaScript e recursos visuais compartilhados. |
 | `apps/handgrip-little/` | Página pública do Handgrip Light. |
