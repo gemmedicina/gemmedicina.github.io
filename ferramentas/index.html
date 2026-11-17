@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Calculadoras clínicas | GEM Medicina e Pesquisa</title>
+  <meta name="description" content="Calculadoras de IMC, FIB-4 e CKD-EPI 2021 para consulta rápida, com referências científicas e sem armazenamento de dados.">
+  <link rel="canonical" href="https://gemmedicina.com.br/ferramentas/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GEM Medicina e Pesquisa">
+  <meta property="og:title" content="Calculadoras clínicas | GEM Medicina e Pesquisa">
+  <meta property="og:description" content="IMC, FIB-4 e CKD-EPI 2021 para consulta rápida, com referências científicas.">
+  <meta property="og:url" content="https://gemmedicina.com.br/ferramentas/">
+  <meta property="og:locale" content="pt_BR">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo-principal">
+    <span data-lang="pt">Pular para o conteúdo</span>
+    <span data-lang="en">Skip to content</span>
+  </a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="/assets/gem-mark.svg" alt="">
+        <span>
+          <span data-lang="pt">GEM Medicina e Pesquisa</span>
+          <span data-lang="en">GEM Medicine & Research</span>
+          <small>
+            <span data-lang="pt">Medicina, pesquisa e inovação</span>
+            <span data-lang="en">Medicine, research and innovation</span>
+          </small>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Principal">
+        <a href="/">
+          <span class="inline-lang" data-lang="pt">Início</span>
+          <span class="inline-lang" data-lang="en">Home</span>
+        </a>
+        <a href="/ferramentas/" aria-current="page">
+          <span class="inline-lang" data-lang="pt">Ferramentas</span>
+          <span class="inline-lang" data-lang="en">Tools</span>
+        </a>
+        <a href="/contato/">
+          <span class="inline-lang" data-lang="pt">Contato</span>
+          <span class="inline-lang" data-lang="en">Contact</span>
+        </a>
+        <button class="lang-toggle" type="button" aria-label="Alterar idioma para inglês">EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">
+          <span data-lang="pt">Ferramentas úteis</span>
+          <span data-lang="en">Useful tools</span>
+        </p>
+        <h1>
+          <span data-lang="pt">Calculadoras clínicas</span>
+          <span data-lang="en">Clinical calculators</span>
+        </h1>
+        <p class="lead">
+          <span data-lang="pt">Cálculos objetivos para consulta rápida, com fórmula e referência científica identificadas.</span>
+          <span data-lang="en">Objective calculations for quick reference, with the formula and scientific source clearly identified.</span>
+        </p>
+
+        <div class="privacy-note">
+          <div>
+            <strong>
+              <span data-lang="pt">Privacidade por princípio.</span>
+              <span data-lang="en">Privacy by design.</span>
+            </strong>
+            <span data-lang="pt"> Os dados digitados são processados somente neste navegador. Não são enviados, gravados ou associados a nomes ou prontuários.</span>
+            <span data-lang="en"> Entered values are processed only in this browser. They are not sent, stored, or associated with names or medical records.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-body alt">
+      <div class="container">
+        <div class="notice">
+          <span data-lang="pt">Estas ferramentas realizam operações matemáticas a partir dos valores informados. Não fornecem diagnóstico, prescrição ou recomendação de conduta e não substituem avaliação clínica.</span>
+          <span data-lang="en">These tools perform mathematical operations using the values entered. They do not provide diagnoses, prescriptions, or management recommendations and do not replace clinical assessment.</span>
+        </div>
+
+        <div class="calculator-list">
+          <article class="calculator-card" id="imc">
+            <header>
+              <span class="tag">IMC · BMI</span>
+              <h2>
+                <span data-lang="pt">Índice de massa corporal</span>
+                <span data-lang="en">Body mass index</span>
+              </h2>
+              <p>
+                <span data-lang="pt">Cálculo: peso (kg) ÷ altura² (m).</span>
+                <span data-lang="en">Calculation: weight (kg) ÷ height² (m).</span>
+              </p>
+            </header>
+
+            <form class="calculator" data-calculator="bmi" novalidate autocomplete="off">
+              <div class="calculator-form cols-2">
+                <div class="field">
+                  <label for="bmi-weight"><span class="inline-lang" data-lang="pt">Peso</span><span class="inline-lang" data-lang="en">Weight</span> (kg)</label>
+                  <input id="bmi-weight" name="weight" type="number" inputmode="decimal" min="1" max="500" step="0.1" required>
+                </div>
+                <div class="field">
+                  <label for="bmi-height"><span class="inline-lang" data-lang="pt">Altura</span><span class="inline-lang" data-lang="en">Height</span> (cm)</label>
+                  <input id="bmi-height" name="height" type="number" inputmode="decimal" min="50" max="250" step="0.1" required>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="button" type="submit"><span data-lang="pt">Calcular IMC</span><span data-lang="en">Calculate BMI</span></button>
+                <button class="button secondary" type="reset"><span data-lang="pt">Limpar</span><span data-lang="en">Clear</span></button>
+              </div>
+              <p class="calculator-error" role="alert" aria-live="polite"></p>
+              <div class="calculator-result" role="status" aria-live="polite" hidden>
+                <span class="result-label"><span data-lang="pt">Resultado</span><span data-lang="en">Result</span></span>
+                <strong class="result-value"></strong>
+                <span class="result-unit">kg/m²</span>
+              </div>
+            </form>
+
+            <div class="reference">
+              <strong><span data-lang="pt">Referência:</span><span data-lang="en">Reference:</span></strong>
+              World Health Organization. <em>Obesity and overweight</em>.
+              <a href="https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight" target="_blank" rel="noopener noreferrer">
+                <span data-lang="pt">Acessar referência</span><span data-lang="en">Open reference</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="calculator-card" id="fib4">
+            <header>
+              <span class="tag">FIB-4</span>
+              <h2>FIB-4</h2>
+              <p>
+                <span data-lang="pt">Cálculo: idade × AST ÷ (plaquetas × √ALT).</span>
+                <span data-lang="en">Calculation: age × AST ÷ (platelets × √ALT).</span>
+              </p>
+            </header>
+
+            <form class="calculator" data-calculator="fib4" novalidate autocomplete="off">
+              <div class="calculator-form">
+                <div class="field">
+                  <label for="fib-age"><span class="inline-lang" data-lang="pt">Idade</span><span class="inline-lang" data-lang="en">Age</span> (<span class="inline-lang" data-lang="pt">anos</span><span class="inline-lang" data-lang="en">years</span>)</label>
+                  <input id="fib-age" name="age" type="number" inputmode="numeric" min="18" max="120" step="1" required>
+                </div>
+                <div class="field">
+                  <label for="fib-ast">AST / TGO (U/L)</label>
+                  <input id="fib-ast" name="ast" type="number" inputmode="decimal" min="1" max="10000" step="0.1" required>
+                </div>
+                <div class="field">
+                  <label for="fib-alt">ALT / TGP (U/L)</label>
+                  <input id="fib-alt" name="alt" type="number" inputmode="decimal" min="1" max="10000" step="0.1" required>
+                </div>
+                <div class="field">
+                  <label for="fib-platelets"><span class="inline-lang" data-lang="pt">Plaquetas</span><span class="inline-lang" data-lang="en">Platelets</span> (10⁹/L)</label>
+                  <input id="fib-platelets" name="platelets" type="number" inputmode="decimal" min="1" max="2000" step="1" required>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="button" type="submit"><span data-lang="pt">Calcular FIB-4</span><span data-lang="en">Calculate FIB-4</span></button>
+                <button class="button secondary" type="reset"><span data-lang="pt">Limpar</span><span data-lang="en">Clear</span></button>
+              </div>
+              <p class="calculator-error" role="alert" aria-live="polite"></p>
+              <div class="calculator-result" role="status" aria-live="polite" hidden>
+                <span class="result-label"><span data-lang="pt">Resultado</span><span data-lang="en">Result</span></span>
+                <strong class="result-value"></strong>
+              </div>
+            </form>
+
+            <div class="reference">
+              <strong><span data-lang="pt">Referência:</span><span data-lang="en">Reference:</span></strong>
+              Sterling RK et al. <em>Hepatology</em>. 2006;43(6):1317–1325. doi:10.1002/hep.21178.
+              <a href="https://pubmed.ncbi.nlm.nih.gov/16729309/" target="_blank" rel="noopener noreferrer">
+                <span data-lang="pt">Acessar referência</span><span data-lang="en">Open reference</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="calculator-card" id="ckd-epi">
+            <header>
+              <span class="tag">CKD-EPI 2021</span>
+              <h2>
+                <span data-lang="pt">Taxa de filtração glomerular estimada</span>
+                <span data-lang="en">Estimated glomerular filtration rate</span>
+              </h2>
+              <p>
+                <span data-lang="pt">Equação CKD-EPI 2021 baseada em creatinina, para adultos e sem variável de raça.</span>
+                <span data-lang="en">The 2021 creatinine-based CKD-EPI equation for adults, without a race variable.</span>
+              </p>
+            </header>
+
+            <form class="calculator" data-calculator="ckdepi" novalidate autocomplete="off">
+              <div class="calculator-form cols-3">
+                <div class="field">
+                  <label for="ckd-age"><span class="inline-lang" data-lang="pt">Idade</span><span class="inline-lang" data-lang="en">Age</span> (<span class="inline-lang" data-lang="pt">anos</span><span class="inline-lang" data-lang="en">years</span>)</label>
+                  <input id="ckd-age" name="age" type="number" inputmode="numeric" min="18" max="120" step="1" required>
+                </div>
+                <div class="field">
+                  <label for="ckd-sex"><span class="inline-lang" data-lang="pt">Sexo utilizado pela equação</span><span class="inline-lang" data-lang="en">Sex used by the equation</span></label>
+                  <select id="ckd-sex" name="sex" required>
+                    <option value="">Selecione / Select</option>
+                    <option value="female">Feminino / Female</option>
+                    <option value="male">Masculino / Male</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="ckd-creatinine"><span class="inline-lang" data-lang="pt">Creatinina sérica</span><span class="inline-lang" data-lang="en">Serum creatinine</span> (mg/dL)</label>
+                  <input id="ckd-creatinine" name="creatinine" type="number" inputmode="decimal" min="0.1" max="30" step="0.01" required>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="button" type="submit"><span data-lang="pt">Calcular TFG estimada</span><span data-lang="en">Calculate eGFR</span></button>
+                <button class="button secondary" type="reset"><span data-lang="pt">Limpar</span><span data-lang="en">Clear</span></button>
+              </div>
+              <p class="calculator-error" role="alert" aria-live="polite"></p>
+              <div class="calculator-result" role="status" aria-live="polite" hidden>
+                <span class="result-label"><span data-lang="pt">Resultado</span><span data-lang="en">Result</span></span>
+                <strong class="result-value"></strong>
+                <span class="result-unit">mL/min/1,73 m²</span>
+              </div>
+            </form>
+
+            <div class="reference">
+              <strong><span data-lang="pt">Referência:</span><span data-lang="en">Reference:</span></strong>
+              National Kidney Foundation. <em>CKD-EPI Creatinine Equation (2021)</em>.
+              <a href="https://www.kidney.org/professionals/ckd-epi-creatinine-equation-2021" target="_blank" rel="noopener noreferrer">
+                <span data-lang="pt">Acessar referência</span><span data-lang="en">Open reference</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>GEM Medicina e Pesquisa</strong>
+        <p><span data-lang="pt">Medicina, pesquisa e inovação aplicada à saúde.</span><span data-lang="en">Medicine, research and innovation applied to health.</span></p>
+        <small>© 2026 GEM Medicina e Pesquisa Ltda.</small>
+      </div>
+      <div class="footer-links">
+        <strong><span data-lang="pt">Institucional</span><span data-lang="en">Institutional</span></strong>
+        <a href="/"><span data-lang="pt">Início</span><span data-lang="en">Home</span></a>
+        <a href="/ferramentas/"><span data-lang="pt">Ferramentas úteis</span><span data-lang="en">Useful tools</span></a>
+      </div>
+      <div class="footer-links">
+        <strong><span data-lang="pt">Contato</span><span data-lang="en">Contact</span></strong>
+        <a href="mailto:contato@gemmedicina.com.br">contato@gemmedicina.com.br</a>
+        <a href="mailto:suporte@gemmedicina.com.br">suporte@gemmedicina.com.br</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/site.js"></script>
+  <script src="/assets/calculadoras.js"></script>
+</body>
+</html>
