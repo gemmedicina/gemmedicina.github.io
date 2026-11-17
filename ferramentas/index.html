@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Calculadoras clínicas | GEM Medicina e Pesquisa</title>
-  <meta name="description" content="Calculadoras clínicas para consulta rápida, com referências científicas e sem armazenamento de dados.">
+  <title>Calculadora de IMC | GEM Medicina e Pesquisa</title>
+  <meta name="description" content="Calculadora de IMC para consulta rápida, com referência científica e processamento local dos valores.">
   <link rel="canonical" href="https://gemmedicina.com.br/ferramentas/">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="GEM Medicina e Pesquisa">
-  <meta property="og:title" content="Calculadoras clínicas | GEM Medicina e Pesquisa">
-  <meta property="og:description" content="Calculadoras clínicas para consulta rápida, com referências científicas e sem armazenamento de dados.">
+  <meta property="og:title" content="Calculadora de IMC | GEM Medicina e Pesquisa">
+  <meta property="og:description" content="Calculadora de IMC para consulta rápida, com referência científica e processamento local dos valores.">
   <meta property="og:url" content="https://gemmedicina.com.br/ferramentas/">
   <meta property="og:locale" content="pt_BR">
 
@@ -45,8 +45,8 @@
           <span class="inline-lang" data-lang="en">Home</span>
         </a>
         <a href="/ferramentas/" aria-current="page">
-          <span class="inline-lang" data-lang="pt">Ferramentas</span>
-          <span class="inline-lang" data-lang="en">Tools</span>
+          <span class="inline-lang" data-lang="pt">IMC</span>
+          <span class="inline-lang" data-lang="en">BMI</span>
         </a>
         <a href="/contato/">
           <span class="inline-lang" data-lang="pt">Contato</span>
@@ -61,32 +61,18 @@
     <section class="page-hero">
       <div class="container">
         <p class="eyebrow">
-          <span data-lang="pt">Ferramentas úteis</span>
-          <span data-lang="en">Useful tools</span>
+          <span data-lang="pt">Consulta rápida</span>
+          <span data-lang="en">Quick reference</span>
         </p>
         <h1>
-          <span data-lang="pt">Calculadoras clínicas</span>
-          <span data-lang="en">Clinical calculators</span>
+          <span data-lang="pt">Calculadora de IMC</span>
+          <span data-lang="en">BMI calculator</span>
         </h1>
         <p class="lead">
-          <span data-lang="pt">Cálculos objetivos para consulta rápida, com fórmula e referência científica identificadas.</span>
-          <span data-lang="en">Objective calculations for quick reference, with the formula and scientific source clearly identified.</span>
+          <span data-lang="pt">Cálculo simples e objetivo do índice de massa corporal, com fórmula e referência científica identificadas.</span>
+          <span data-lang="en">A simple body mass index calculation, with its formula and scientific reference identified.</span>
         </p>
 
-        <nav class="calculator-shortcuts" aria-labelledby="calculator-shortcuts-label">
-          <span class="calculator-shortcuts-label" id="calculator-shortcuts-label">
-            <span data-lang="pt">Acesso rápido:</span>
-            <span data-lang="en">Quick access:</span>
-          </span>
-          <a href="#imc">IMC / BMI</a>
-          <a href="#fib4">FIB-4</a>
-          <a href="#ckd-epi">CKD-EPI</a>
-          <a href="#calcio-creatinina-urinaria">
-            <span class="inline-lang" data-lang="pt">Ca/Cr urinária</span>
-            <span class="inline-lang" data-lang="en">Urine Ca/Cr</span>
-          </a>
-          <a href="#rac">RAC / UACR</a>
-        </nav>
 
         <div class="privacy-note">
           <div>
@@ -94,8 +80,8 @@
               <span data-lang="pt">Privacidade por princípio.</span>
               <span data-lang="en">Privacy by design.</span>
             </strong>
-            <span data-lang="pt"> Os dados digitados são processados somente neste navegador. Não são enviados, gravados ou associados a nomes ou prontuários.</span>
-            <span data-lang="en"> Entered values are processed only in this browser. They are not sent, stored, or associated with names or medical records.</span>
+            <span data-lang="pt"> Peso e altura são processados localmente no navegador e não são enviados à GEM pelo código desta calculadora. A hospedagem pode processar dados técnicos de acesso.</span>
+            <span data-lang="en"> Weight and height are processed locally in the browser and are not sent to GEM by this calculator’s code. The hosting provider may process technical access data.</span>
           </div>
         </div>
       </div>
@@ -104,8 +90,8 @@
     <section class="page-body alt">
       <div class="container">
         <div class="notice">
-          <span data-lang="pt">Estas ferramentas realizam operações matemáticas a partir dos valores informados. Não fornecem diagnóstico, prescrição ou recomendação de conduta e não substituem avaliação clínica.</span>
-          <span data-lang="en">These tools perform mathematical operations using the values entered. They do not provide diagnoses, prescriptions, or management recommendations and do not replace clinical assessment.</span>
+          <span data-lang="pt"><strong>Sobre esta ferramenta.</strong> A calculadora de IMC destina-se à consulta rápida e ao apoio informativo. O resultado é obtido a partir dos valores informados e de uma fórmula científica identificada. Isoladamente, o IMC não constitui diagnóstico ou recomendação de conduta e não substitui a avaliação clínica individualizada.</span>
+          <span data-lang="en"><strong>About this tool.</strong> The BMI calculator is intended for quick reference and informational support. Its result is obtained from the entered values and an identified scientific formula. BMI alone does not constitute a diagnosis or management recommendation and does not replace individualized clinical assessment.</span>
         </div>
 
         <div class="calculator-list">
@@ -151,207 +137,6 @@
             </div>
           </article>
 
-          <article class="calculator-card" id="fib4">
-            <header>
-              <span class="tag">FIB-4</span>
-              <h2>FIB-4</h2>
-              <p>
-                <span data-lang="pt">Cálculo: idade × AST ÷ (plaquetas × √ALT).</span>
-                <span data-lang="en">Calculation: age × AST ÷ (platelets × √ALT).</span>
-              </p>
-            </header>
-
-            <form class="calculator" data-calculator="fib4" novalidate autocomplete="off">
-              <div class="calculator-form">
-                <div class="field">
-                  <label for="fib-age"><span class="inline-lang" data-lang="pt">Idade</span><span class="inline-lang" data-lang="en">Age</span> (<span class="inline-lang" data-lang="pt">anos</span><span class="inline-lang" data-lang="en">years</span>)</label>
-                  <input id="fib-age" name="age" type="number" inputmode="numeric" min="18" max="120" step="1" required>
-                </div>
-                <div class="field">
-                  <label for="fib-ast">AST / TGO (U/L)</label>
-                  <input id="fib-ast" name="ast" type="number" inputmode="decimal" min="1" max="10000" step="0.1" required>
-                </div>
-                <div class="field">
-                  <label for="fib-alt">ALT / TGP (U/L)</label>
-                  <input id="fib-alt" name="alt" type="number" inputmode="decimal" min="1" max="10000" step="0.1" required>
-                </div>
-                <div class="field">
-                  <label for="fib-platelets"><span class="inline-lang" data-lang="pt">Plaquetas</span><span class="inline-lang" data-lang="en">Platelets</span> (10⁹/L)</label>
-                  <input id="fib-platelets" name="platelets" type="number" inputmode="decimal" min="1" max="2000" step="1" required>
-                </div>
-              </div>
-              <div class="form-actions">
-                <button class="button" type="submit"><span data-lang="pt">Calcular FIB-4</span><span data-lang="en">Calculate FIB-4</span></button>
-                <button class="button secondary" type="reset"><span data-lang="pt">Limpar</span><span data-lang="en">Clear</span></button>
-              </div>
-              <p class="calculator-error" role="alert" aria-live="polite"></p>
-              <div class="calculator-result" role="status" aria-live="polite" hidden>
-                <span class="result-label"><span data-lang="pt">Resultado</span><span data-lang="en">Result</span></span>
-                <strong class="result-value"></strong>
-              </div>
-            </form>
-
-            <div class="reference">
-              <strong><span data-lang="pt">Referências:</span><span data-lang="en">References:</span></strong>
-              <span data-lang="pt">Fórmula original:</span><span data-lang="en">Original formula:</span>
-              Sterling RK et al. <em>Development of a simple noninvasive index to predict significant fibrosis in patients with HIV/HCV coinfection</em>. Hepatology. 2006;43(6):1317–1325. doi:10.1002/hep.21178.
-              <br>
-              <span data-lang="pt">Aplicação atual no contexto metabólico:</span><span data-lang="en">Current use in the metabolic context:</span>
-              Rinella ME et al. <em>AASLD Practice Guidance on the clinical assessment and management of nonalcoholic fatty liver disease</em>. Hepatology. 2023;77(5):1797–1835. doi:10.1097/HEP.0000000000000323.
-            </div>
-          </article>
-
-          <article class="calculator-card" id="ckd-epi">
-            <header>
-              <span class="tag">CKD-EPI 2021</span>
-              <h2>
-                <span data-lang="pt">Taxa de filtração glomerular estimada</span>
-                <span data-lang="en">Estimated glomerular filtration rate</span>
-              </h2>
-              <p>
-                <span data-lang="pt">Equação CKD-EPI 2021 baseada em creatinina, para adultos e sem variável de raça.</span>
-                <span data-lang="en">The 2021 creatinine-based CKD-EPI equation for adults, without a race variable.</span>
-              </p>
-            </header>
-
-            <form class="calculator" data-calculator="ckdepi" novalidate autocomplete="off">
-              <div class="calculator-form cols-3">
-                <div class="field">
-                  <label for="ckd-age"><span class="inline-lang" data-lang="pt">Idade</span><span class="inline-lang" data-lang="en">Age</span> (<span class="inline-lang" data-lang="pt">anos</span><span class="inline-lang" data-lang="en">years</span>)</label>
-                  <input id="ckd-age" name="age" type="number" inputmode="numeric" min="18" max="120" step="1" required>
-                </div>
-                <div class="field">
-                  <label for="ckd-sex"><span class="inline-lang" data-lang="pt">Sexo utilizado pela equação</span><span class="inline-lang" data-lang="en">Sex used by the equation</span></label>
-                  <select id="ckd-sex" name="sex" required>
-                    <option value="">Selecione / Select</option>
-                    <option value="female">Feminino / Female</option>
-                    <option value="male">Masculino / Male</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="ckd-creatinine"><span class="inline-lang" data-lang="pt">Creatinina sérica</span><span class="inline-lang" data-lang="en">Serum creatinine</span> (mg/dL)</label>
-                  <input id="ckd-creatinine" name="creatinine" type="number" inputmode="decimal" min="0.1" max="30" step="0.01" required>
-                </div>
-              </div>
-              <div class="form-actions">
-                <button class="button" type="submit"><span data-lang="pt">Calcular TFG estimada</span><span data-lang="en">Calculate eGFR</span></button>
-                <button class="button secondary" type="reset"><span data-lang="pt">Limpar</span><span data-lang="en">Clear</span></button>
-              </div>
-              <p class="calculator-error" role="alert" aria-live="polite"></p>
-              <div class="calculator-result" role="status" aria-live="polite" hidden>
-                <span class="result-label"><span data-lang="pt">Resultado</span><span data-lang="en">Result</span></span>
-                <strong class="result-value"></strong>
-                <span class="result-unit">mL/min/1,73 m²</span>
-              </div>
-            </form>
-
-            <div class="reference">
-              <strong><span data-lang="pt">Referência:</span><span data-lang="en">Reference:</span></strong>
-              Inker LA et al.; Chronic Kidney Disease Epidemiology Collaboration. <em>New Creatinine- and Cystatin C-Based Equations to Estimate GFR without Race</em>. N Engl J Med. 2021;385(19):1737–1749. doi:10.1056/NEJMoa2102953.
-            </div>
-          </article>
-
-          <article class="calculator-card" id="calcio-creatinina-urinaria">
-            <header>
-              <span class="tag">Ca/Cr urinária · Urine Ca/Cr</span>
-              <h2>
-                <span data-lang="pt">Relação cálcio/creatinina urinária em amostra isolada</span>
-                <span data-lang="en">Spot urine calcium-to-creatinine ratio</span>
-              </h2>
-              <p>
-                <span data-lang="pt">Cálculo: cálcio urinário (mg/dL) ÷ creatinina urinária (mg/dL).</span>
-                <span data-lang="en">Calculation: urine calcium (mg/dL) ÷ urine creatinine (mg/dL).</span>
-              </p>
-              <p class="meta">
-                <span data-lang="pt">O resultado de uma amostra isolada não equivale à excreção urinária de cálcio em 24 horas.</span>
-                <span data-lang="en">A spot urine result is not equivalent to 24-hour urinary calcium excretion.</span>
-              </p>
-            </header>
-
-            <form class="calculator" data-calculator="urinecacr" novalidate autocomplete="off">
-              <div class="calculator-form cols-2">
-                <div class="field">
-                  <label for="ucacr-calcium"><span class="inline-lang" data-lang="pt">Cálcio urinário</span><span class="inline-lang" data-lang="en">Urine calcium</span> (mg/dL)</label>
-                  <input id="ucacr-calcium" name="calcium" type="number" inputmode="decimal" min="0.01" max="1000" step="0.01" required>
-                </div>
-                <div class="field">
-                  <label for="ucacr-creatinine"><span class="inline-lang" data-lang="pt">Creatinina urinária</span><span class="inline-lang" data-lang="en">Urine creatinine</span> (mg/dL)</label>
-                  <input id="ucacr-creatinine" name="creatinine" type="number" inputmode="decimal" min="0.01" max="1000" step="0.01" required>
-                </div>
-              </div>
-              <div class="form-actions">
-                <button class="button" type="submit"><span data-lang="pt">Calcular relação Ca/Cr</span><span data-lang="en">Calculate Ca/Cr ratio</span></button>
-                <button class="button secondary" type="reset"><span data-lang="pt">Limpar</span><span data-lang="en">Clear</span></button>
-              </div>
-              <p class="calculator-error" role="alert" aria-live="polite"></p>
-              <div class="calculator-result" role="status" aria-live="polite" hidden>
-                <span class="result-label"><span data-lang="pt">Resultado</span><span data-lang="en">Result</span></span>
-                <strong class="result-value"></strong>
-                <span class="result-unit">mg/mg</span>
-              </div>
-            </form>
-
-            <div class="reference">
-              <strong><span data-lang="pt">Referência:</span><span data-lang="en">Reference:</span></strong>
-              Mondorf A et al. <em>Comparing 24 h Urine and Spot Urine Calcium Measurements in Clinical Routine: Accuracy and Limitations</em>. J Clin Med. 2026;15(10):3901. doi:10.3390/jcm15103901.
-            </div>
-          </article>
-
-          <article class="calculator-card" id="rac">
-            <header>
-              <span class="tag">RAC · ACR/UACR</span>
-              <h2>
-                <span data-lang="pt">Relação albumina/creatinina urinária (RAC)</span>
-                <span data-lang="en">Urine albumin-to-creatinine ratio (ACR/UACR)</span>
-              </h2>
-              <p>
-                <span data-lang="pt">A albumina e a creatinina urinárias são convertidas para unidades compatíveis antes do cálculo.</span>
-                <span data-lang="en">Urine albumin and creatinine are converted to compatible units before calculation.</span>
-              </p>
-            </header>
-
-            <form class="calculator" data-calculator="uacr" novalidate autocomplete="off">
-              <div class="calculator-form">
-                <div class="field">
-                  <label for="uacr-albumin"><span class="inline-lang" data-lang="pt">Albumina urinária</span><span class="inline-lang" data-lang="en">Urine albumin</span></label>
-                  <input id="uacr-albumin" name="albumin" type="number" inputmode="decimal" min="0.01" max="100000" step="0.01" required>
-                </div>
-                <div class="field">
-                  <label for="uacr-albumin-unit"><span class="inline-lang" data-lang="pt">Unidade da albumina</span><span class="inline-lang" data-lang="en">Albumin unit</span></label>
-                  <select id="uacr-albumin-unit" name="albuminUnit" required>
-                    <option value="mgL" selected>mg/L</option>
-                    <option value="mgdL">mg/dL</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="uacr-creatinine"><span class="inline-lang" data-lang="pt">Creatinina urinária</span><span class="inline-lang" data-lang="en">Urine creatinine</span></label>
-                  <input id="uacr-creatinine" name="creatinine" type="number" inputmode="decimal" min="0.01" max="10000" step="0.01" required>
-                </div>
-                <div class="field">
-                  <label for="uacr-creatinine-unit"><span class="inline-lang" data-lang="pt">Unidade da creatinina</span><span class="inline-lang" data-lang="en">Creatinine unit</span></label>
-                  <select id="uacr-creatinine-unit" name="creatinineUnit" required>
-                    <option value="mgdL" selected>mg/dL</option>
-                    <option value="gL">g/L</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-actions">
-                <button class="button" type="submit"><span data-lang="pt">Calcular RAC</span><span data-lang="en">Calculate ACR</span></button>
-                <button class="button secondary" type="reset"><span data-lang="pt">Limpar</span><span data-lang="en">Clear</span></button>
-              </div>
-              <p class="calculator-error" role="alert" aria-live="polite"></p>
-              <div class="calculator-result" role="status" aria-live="polite" hidden>
-                <span class="result-label"><span data-lang="pt">Resultado</span><span data-lang="en">Result</span></span>
-                <strong class="result-value"></strong>
-                <span class="result-unit">mg/g</span>
-              </div>
-            </form>
-
-            <div class="reference">
-              <strong><span data-lang="pt">Referência:</span><span data-lang="en">Reference:</span></strong>
-              Kidney Disease: Improving Global Outcomes (KDIGO) CKD Work Group. <em>KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease</em>. Kidney Int. 2024;105(4S):S117–S314. doi:10.1016/j.kint.2023.10.018.
-            </div>
-          </article>
         </div>
       </div>
     </section>
@@ -367,7 +152,7 @@
       <div class="footer-links">
         <strong><span data-lang="pt">Institucional</span><span data-lang="en">Institutional</span></strong>
         <a href="/"><span data-lang="pt">Início</span><span data-lang="en">Home</span></a>
-        <a href="/ferramentas/"><span data-lang="pt">Ferramentas úteis</span><span data-lang="en">Useful tools</span></a>
+        <a href="/ferramentas/"><span data-lang="pt">Calculadora de IMC</span><span data-lang="en">BMI calculator</span></a>
       </div>
       <div class="footer-links">
         <strong><span data-lang="pt">Contato</span><span data-lang="en">Contact</span></strong>
