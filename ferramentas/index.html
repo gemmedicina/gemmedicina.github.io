@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <title>Calculadoras clínicas | GEM Medicina e Pesquisa</title>
-  <meta name="description" content="Calculadoras de IMC, FIB-4 e CKD-EPI 2021 para consulta rápida, com referências científicas e sem armazenamento de dados.">
+  <meta name="description" content="Calculadoras clínicas para consulta rápida, com referências científicas e sem armazenamento de dados.">
   <link rel="canonical" href="https://gemmedicina.com.br/ferramentas/">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="GEM Medicina e Pesquisa">
   <meta property="og:title" content="Calculadoras clínicas | GEM Medicina e Pesquisa">
-  <meta property="og:description" content="IMC, FIB-4 e CKD-EPI 2021 para consulta rápida, com referências científicas.">
+  <meta property="og:description" content="Calculadoras clínicas para consulta rápida, com referências científicas e sem armazenamento de dados.">
   <meta property="og:url" content="https://gemmedicina.com.br/ferramentas/">
   <meta property="og:locale" content="pt_BR">
 
@@ -233,6 +233,108 @@
             <div class="reference">
               <strong><span data-lang="pt">Referência:</span><span data-lang="en">Reference:</span></strong>
               Inker LA et al.; Chronic Kidney Disease Epidemiology Collaboration. <em>New Creatinine- and Cystatin C-Based Equations to Estimate GFR without Race</em>. N Engl J Med. 2021;385(19):1737–1749. doi:10.1056/NEJMoa2102953.
+            </div>
+          </article>
+
+          <article class="calculator-card" id="calcio-creatinina-urinaria">
+            <header>
+              <span class="tag">Ca/Cr urinária · Urine Ca/Cr</span>
+              <h2>
+                <span data-lang="pt">Relação cálcio/creatinina urinária em amostra isolada</span>
+                <span data-lang="en">Spot urine calcium-to-creatinine ratio</span>
+              </h2>
+              <p>
+                <span data-lang="pt">Cálculo: cálcio urinário (mg/dL) ÷ creatinina urinária (mg/dL).</span>
+                <span data-lang="en">Calculation: urine calcium (mg/dL) ÷ urine creatinine (mg/dL).</span>
+              </p>
+              <p class="meta">
+                <span data-lang="pt">O resultado de uma amostra isolada não equivale à excreção urinária de cálcio em 24 horas.</span>
+                <span data-lang="en">A spot urine result is not equivalent to 24-hour urinary calcium excretion.</span>
+              </p>
+            </header>
+
+            <form class="calculator" data-calculator="urinecacr" novalidate autocomplete="off">
+              <div class="calculator-form cols-2">
+                <div class="field">
+                  <label for="ucacr-calcium"><span class="inline-lang" data-lang="pt">Cálcio urinário</span><span class="inline-lang" data-lang="en">Urine calcium</span> (mg/dL)</label>
+                  <input id="ucacr-calcium" name="calcium" type="number" inputmode="decimal" min="0.01" max="1000" step="0.01" required>
+                </div>
+                <div class="field">
+                  <label for="ucacr-creatinine"><span class="inline-lang" data-lang="pt">Creatinina urinária</span><span class="inline-lang" data-lang="en">Urine creatinine</span> (mg/dL)</label>
+                  <input id="ucacr-creatinine" name="creatinine" type="number" inputmode="decimal" min="0.01" max="1000" step="0.01" required>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="button" type="submit"><span data-lang="pt">Calcular relação Ca/Cr</span><span data-lang="en">Calculate Ca/Cr ratio</span></button>
+                <button class="button secondary" type="reset"><span data-lang="pt">Limpar</span><span data-lang="en">Clear</span></button>
+              </div>
+              <p class="calculator-error" role="alert" aria-live="polite"></p>
+              <div class="calculator-result" role="status" aria-live="polite" hidden>
+                <span class="result-label"><span data-lang="pt">Resultado</span><span data-lang="en">Result</span></span>
+                <strong class="result-value"></strong>
+                <span class="result-unit">mg/mg</span>
+              </div>
+            </form>
+
+            <div class="reference">
+              <strong><span data-lang="pt">Referência:</span><span data-lang="en">Reference:</span></strong>
+              Mondorf A et al. <em>Comparing 24 h Urine and Spot Urine Calcium Measurements in Clinical Routine: Accuracy and Limitations</em>. J Clin Med. 2026;15(10):3901. doi:10.3390/jcm15103901.
+            </div>
+          </article>
+
+          <article class="calculator-card" id="rac">
+            <header>
+              <span class="tag">RAC · ACR/UACR</span>
+              <h2>
+                <span data-lang="pt">Relação albumina/creatinina urinária (RAC)</span>
+                <span data-lang="en">Urine albumin-to-creatinine ratio (ACR/UACR)</span>
+              </h2>
+              <p>
+                <span data-lang="pt">A albumina e a creatinina urinárias são convertidas para unidades compatíveis antes do cálculo.</span>
+                <span data-lang="en">Urine albumin and creatinine are converted to compatible units before calculation.</span>
+              </p>
+            </header>
+
+            <form class="calculator" data-calculator="uacr" novalidate autocomplete="off">
+              <div class="calculator-form">
+                <div class="field">
+                  <label for="uacr-albumin"><span class="inline-lang" data-lang="pt">Albumina urinária</span><span class="inline-lang" data-lang="en">Urine albumin</span></label>
+                  <input id="uacr-albumin" name="albumin" type="number" inputmode="decimal" min="0.01" max="100000" step="0.01" required>
+                </div>
+                <div class="field">
+                  <label for="uacr-albumin-unit"><span class="inline-lang" data-lang="pt">Unidade da albumina</span><span class="inline-lang" data-lang="en">Albumin unit</span></label>
+                  <select id="uacr-albumin-unit" name="albuminUnit" required>
+                    <option value="mgL" selected>mg/L</option>
+                    <option value="mgdL">mg/dL</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="uacr-creatinine"><span class="inline-lang" data-lang="pt">Creatinina urinária</span><span class="inline-lang" data-lang="en">Urine creatinine</span></label>
+                  <input id="uacr-creatinine" name="creatinine" type="number" inputmode="decimal" min="0.01" max="10000" step="0.01" required>
+                </div>
+                <div class="field">
+                  <label for="uacr-creatinine-unit"><span class="inline-lang" data-lang="pt">Unidade da creatinina</span><span class="inline-lang" data-lang="en">Creatinine unit</span></label>
+                  <select id="uacr-creatinine-unit" name="creatinineUnit" required>
+                    <option value="mgdL" selected>mg/dL</option>
+                    <option value="gL">g/L</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="button" type="submit"><span data-lang="pt">Calcular RAC</span><span data-lang="en">Calculate ACR</span></button>
+                <button class="button secondary" type="reset"><span data-lang="pt">Limpar</span><span data-lang="en">Clear</span></button>
+              </div>
+              <p class="calculator-error" role="alert" aria-live="polite"></p>
+              <div class="calculator-result" role="status" aria-live="polite" hidden>
+                <span class="result-label"><span data-lang="pt">Resultado</span><span data-lang="en">Result</span></span>
+                <strong class="result-value"></strong>
+                <span class="result-unit">mg/g</span>
+              </div>
+            </form>
+
+            <div class="reference">
+              <strong><span data-lang="pt">Referência:</span><span data-lang="en">Reference:</span></strong>
+              Kidney Disease: Improving Global Outcomes (KDIGO) CKD Work Group. <em>KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease</em>. Kidney Int. 2024;105(4S):S117–S314. doi:10.1016/j.kint.2023.10.018.
             </div>
           </article>
         </div>
