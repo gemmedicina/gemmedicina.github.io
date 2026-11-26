@@ -16,7 +16,7 @@
   <meta property="og:locale" content="pt_BR">
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/styles.css?v=painel-antropometrico">
 </head>
 
 <body class="tools-page">
@@ -60,170 +60,46 @@
   <main id="conteudo-principal">
     <section class="page-hero">
       <div class="container">
-        <p class="eyebrow">
-          <span data-lang="pt">Consulta rápida</span>
-          <span data-lang="en">Quick reference</span>
-        </p>
         <h1>
           <span data-lang="pt">Ferramentas antropométricas</span>
           <span data-lang="en">Anthropometric tools</span>
         </h1>
-        <p class="lead">
-          <span data-lang="pt">Calcule o IMC, a relação cintura/estatura e a relação cintura/quadril.</span>
-          <span data-lang="en">Calculate BMI, the waist-to-height ratio and the waist-to-hip ratio.</span>
-        </p>
-
-
-        <div class="privacy-note">
-          <div>
-            <strong>
-              <span data-lang="pt">Privacidade por princípio.</span>
-              <span data-lang="en">Privacy by design.</span>
-            </strong>
-            <span data-lang="pt"> Os dados informados são processados localmente no navegador e não são enviados à GEM pelas calculadoras. A hospedagem pode processar dados técnicos de acesso.</span>
-            <span data-lang="en"> The values entered are processed locally in the browser and are not sent to GEM by the calculators. The hosting provider may process technical access data.</span>
-          </div>
-        </div>
       </div>
     </section>
 
     <section class="page-body alt">
       <div class="container">
-        <div class="notice">
-          <span data-lang="pt">As calculadoras destinam-se à consulta rápida e ao apoio informativo. Os resultados isolados não substituem uma avaliação clínica individualizada.</span>
-          <span data-lang="en">These calculators are intended for quick reference and informational use. The results alone do not replace individualized clinical assessment.</span>
-        </div>
-
-        <div class="calculator-list">
-          <article class="calculator-card" id="imc">
-            <header>
-              <span class="tag">IMC · BMI</span>
-              <h2>
-                <span data-lang="pt">Índice de massa corporal</span>
-                <span data-lang="en">Body mass index</span>
-              </h2>
-              <p>
-                <span data-lang="pt">Cálculo: peso (kg) ÷ altura² (m).</span>
-                <span data-lang="en">Calculation: weight (kg) ÷ height² (m).</span>
+        <div class="anthropometric-panel">
+          <section class="calculator-card" aria-labelledby="measurement-heading">
+            <h2 id="measurement-heading">
+              <span data-lang="pt">Medidas</span>
+              <span data-lang="en">Measurements</span>
+            </h2>
+            <form class="calculator" id="anthropometric-form" aria-describedby="measurement-instructions" novalidate autocomplete="off">
+              <p id="measurement-instructions" class="anthropometric-instructions">
+                <span data-lang="pt">Preencha as medidas disponíveis para calcular os índices correspondentes.</span>
+                <span data-lang="en">Enter the available measurements to calculate the corresponding indices.</span>
               </p>
-            </header>
-
-            <form class="calculator" data-calculator="bmi" novalidate autocomplete="off">
               <div class="calculator-form cols-2">
                 <div class="field">
-                  <label for="bmi-weight"><span class="inline-lang" data-lang="pt">Peso</span><span class="inline-lang" data-lang="en">Weight</span> (kg)</label>
-                  <input id="bmi-weight" name="weight" type="number" inputmode="decimal" min="1" max="500" step="0.1" required>
+                  <label for="measure-weight"><span class="inline-lang" data-lang="pt">Peso</span><span class="inline-lang" data-lang="en">Weight</span> (kg)</label>
+                  <input id="measure-weight" name="weight" type="number" inputmode="decimal" min="1" max="500" step="any">
                 </div>
                 <div class="field">
-                  <label for="bmi-height"><span class="inline-lang" data-lang="pt">Altura</span><span class="inline-lang" data-lang="en">Height</span> (cm)</label>
-                  <input id="bmi-height" name="height" type="number" inputmode="decimal" min="50" max="250" step="0.1" required>
-                </div>
-              </div>
-              <div class="form-actions">
-                <button class="button" type="submit"><span data-lang="pt">Calcular IMC</span><span data-lang="en">Calculate BMI</span></button>
-                <button class="button secondary" type="reset"><span data-lang="pt">Limpar</span><span data-lang="en">Clear</span></button>
-              </div>
-              <p class="calculator-error" role="alert" aria-live="polite"></p>
-              <div class="calculator-result" role="status" aria-live="polite" hidden>
-                <span class="result-label"><span data-lang="pt">Resultado</span><span data-lang="en">Result</span></span>
-                <strong class="result-value"></strong>
-                <span class="result-unit">kg/m²</span>
-              </div>
-            </form>
-
-            <div class="reference">
-              <strong><span data-lang="pt">Referência:</span><span data-lang="en">Reference:</span></strong>
-              World Health Organization. <em>Obesity: preventing and managing the global epidemic</em>. WHO Technical Report Series 894. Geneva: WHO; 2000.
-            </div>
-          </article>
-
-          <article class="calculator-card" id="cintura-estatura">
-            <header>
-              <h2>
-                <span data-lang="pt">Relação cintura/estatura</span>
-                <span data-lang="en">Waist-to-height ratio</span>
-              </h2>
-              <p>
-                <span data-lang="pt">Circunferência da cintura (cm) ÷ estatura (cm).</span>
-                <span data-lang="en">Waist circumference (cm) ÷ height (cm).</span>
-              </p>
-              <p id="waist-height-measurement">
-                <span data-lang="pt">Em pé, meça a cintura no ponto médio entre a última costela palpável e o topo do osso do quadril (crista ilíaca). Mantenha a fita na horizontal, sem apertar, e leia ao fim de uma expiração normal.</span>
-                <span data-lang="en">While standing, measure your waist midway between the lowest palpable rib and the top of the hip bone (iliac crest). Keep the tape level and snug, and take the reading after breathing out normally.</span>
-              </p>
-              <p>
-                <span data-lang="pt">Para classificar o resultado, use o peso informado na calculadora de IMC acima e a mesma estatura nos dois formulários. As faixas se aplicam a adultos com IMC abaixo de 35 kg/m².</span>
-                <span data-lang="en">To classify the result, enter your weight in the BMI calculator above and use the same height in both forms. The ranges apply to adults with a BMI below 35 kg/m².</span>
-              </p>
-            </header>
-
-            <form class="calculator" data-calculator="waistHeight" novalidate autocomplete="off">
-              <div class="calculator-form cols-2">
-                <div class="field">
-                  <label for="waist-height-waist"><span class="inline-lang" data-lang="pt">Circunferência da cintura</span><span class="inline-lang" data-lang="en">Waist circumference</span> (cm)</label>
-                  <input id="waist-height-waist" name="waist" type="number" inputmode="decimal" min="0.1" step="any" aria-describedby="waist-height-measurement" required>
+                  <label for="measure-height"><span class="inline-lang" data-lang="pt">Estatura</span><span class="inline-lang" data-lang="en">Height</span> (cm)</label>
+                  <input id="measure-height" name="height" type="number" inputmode="decimal" min="0.1" step="any">
                 </div>
                 <div class="field">
-                  <label for="waist-height-height"><span class="inline-lang" data-lang="pt">Estatura</span><span class="inline-lang" data-lang="en">Height</span> (cm)</label>
-                  <input id="waist-height-height" name="height" type="number" inputmode="decimal" min="0.1" step="any" required>
-                </div>
-              </div>
-              <div class="form-actions">
-                <button class="button" type="submit" disabled><span data-lang="pt">Calcular</span><span data-lang="en">Calculate</span></button>
-                <button class="button secondary" type="reset"><span data-lang="pt">Limpar</span><span data-lang="en">Clear</span></button>
-              </div>
-              <p class="calculator-error" role="alert" aria-live="polite"></p>
-              <div class="calculator-result" role="status" aria-live="polite" hidden>
-                <span class="result-label"><span data-lang="pt">Resultado</span><span data-lang="en">Result</span></span>
-                <strong class="result-value"></strong>
-                <div>
-                  <strong><span class="inline-lang" data-lang="pt">Classificação antropométrica.</span><span class="inline-lang" data-lang="en">Anthropometric classification.</span></strong>
-                  <span class="result-classification"></span>
-                </div>
-              </div>
-            </form>
-
-            <div class="reference">
-              <strong><span data-lang="pt">Referência:</span><span data-lang="en">Reference:</span></strong>
-              <a href="https://www.nice.org.uk/guidance/ng246/chapter/Identifying-and-assessing-overweight-obesity-and-central-adiposity">NICE NG246</a>.
-              <span class="inline-lang" data-lang="pt">A classificação usa a razão antes do arredondamento.</span>
-              <span class="inline-lang" data-lang="en">Classification uses the ratio before rounding.</span>
-            </div>
-          </article>
-
-          <article class="calculator-card" id="cintura-quadril">
-            <header>
-              <h2>
-                <span data-lang="pt">Relação cintura/quadril</span>
-                <span data-lang="en">Waist-to-hip ratio</span>
-              </h2>
-              <p>
-                <span data-lang="pt">Circunferência da cintura (cm) ÷ circunferência do quadril (cm).</span>
-                <span data-lang="en">Waist circumference (cm) ÷ hip circumference (cm).</span>
-              </p>
-              <p id="waist-hip-measurement">
-                <span data-lang="pt">Meça a cintura como indicado acima e o quadril na parte mais larga dos glúteos, com a fita na horizontal e sem apertar.</span>
-                <span data-lang="en">Measure your waist as described above and your hips around the widest part of the buttocks, keeping the tape level and snug.</span>
-              </p>
-              <p id="waist-hip-scope">
-                <span data-lang="pt">Pontos de corte de referência para adultos: 0,90 para o sexo masculino e 0,85 para o feminino.</span>
-                <span data-lang="en">Adult reference cutoffs are 0.90 for males and 0.85 for females.</span>
-              </p>
-            </header>
-
-            <form class="calculator" data-calculator="waistHip" novalidate autocomplete="off">
-              <div class="calculator-form cols-3">
-                <div class="field">
-                  <label for="waist-hip-waist"><span class="inline-lang" data-lang="pt">Circunferência da cintura</span><span class="inline-lang" data-lang="en">Waist circumference</span> (cm)</label>
-                  <input id="waist-hip-waist" name="waist" type="number" inputmode="decimal" min="0.1" step="any" aria-describedby="waist-height-measurement" required>
+                  <label for="measure-waist"><span class="inline-lang" data-lang="pt">Cintura</span><span class="inline-lang" data-lang="en">Waist</span> (cm)</label>
+                  <input id="measure-waist" name="waist" type="number" inputmode="decimal" min="0.1" step="any">
                 </div>
                 <div class="field">
-                  <label for="waist-hip-hip"><span class="inline-lang" data-lang="pt">Circunferência do quadril</span><span class="inline-lang" data-lang="en">Hip circumference</span> (cm)</label>
-                  <input id="waist-hip-hip" name="hip" type="number" inputmode="decimal" min="0.1" step="any" aria-describedby="waist-hip-measurement" required>
+                  <label for="measure-hip"><span class="inline-lang" data-lang="pt">Quadril</span><span class="inline-lang" data-lang="en">Hip</span> (cm)</label>
+                  <input id="measure-hip" name="hip" type="number" inputmode="decimal" min="0.1" step="any">
                 </div>
-                <div class="field">
-                  <label for="waist-hip-sex"><span class="inline-lang" data-lang="pt">Sexo (opcional)</span><span class="inline-lang" data-lang="en">Sex (optional)</span></label>
-                  <select id="waist-hip-sex" name="sex" aria-describedby="waist-hip-scope">
+                <div class="field anthropometric-sex">
+                  <label for="measure-sex"><span class="inline-lang" data-lang="pt">Sexo (opcional)</span><span class="inline-lang" data-lang="en">Sex (optional)</span></label>
+                  <select id="measure-sex" name="sex">
                     <option value="" data-label-pt="Selecione" data-label-en="Select">Selecione</option>
                     <option value="female" data-label-pt="Feminino" data-label-en="Female">Feminino</option>
                     <option value="male" data-label-pt="Masculino" data-label-en="Male">Masculino</option>
@@ -234,23 +110,80 @@
                 <button class="button" type="submit" disabled><span data-lang="pt">Calcular</span><span data-lang="en">Calculate</span></button>
                 <button class="button secondary" type="reset"><span data-lang="pt">Limpar</span><span data-lang="en">Clear</span></button>
               </div>
-              <p class="calculator-error" role="alert" aria-live="polite"></p>
-              <div class="calculator-result" role="status" aria-live="polite" hidden>
-                <span class="result-label"><span data-lang="pt">Resultado</span><span data-lang="en">Result</span></span>
-                <strong class="result-value"></strong>
-                <div>
-                  <strong><span class="inline-lang" data-lang="pt">Classificação antropométrica.</span><span class="inline-lang" data-lang="en">Anthropometric classification.</span></strong>
-                  <span class="result-classification"></span>
-                </div>
-              </div>
+              <p class="calculator-error" role="alert"></p>
             </form>
-            <div class="reference">
-              <strong><span class="inline-lang" data-lang="pt">Referência:</span><span class="inline-lang" data-lang="en">Reference:</span></strong>
-              <a href="https://www.who.int/publications-detail-redirect/9789241501491"><span class="inline-lang" data-lang="pt">OMS, Tabela A1</span><span class="inline-lang" data-lang="en">WHO, Table A1</span></a>.
-              <span class="inline-lang" data-lang="pt">A classificação usa a razão antes do arredondamento.</span>
-              <span class="inline-lang" data-lang="en">Classification uses the ratio before rounding.</span>
+            <details class="anthropometric-details">
+              <summary><span class="inline-lang" data-lang="pt">Como medir</span><span class="inline-lang" data-lang="en">How to measure</span></summary>
+              <p>
+                <span data-lang="pt">Em pé, meça a cintura no ponto médio entre a última costela palpável e o topo do osso do quadril (crista ilíaca). Leia ao fim de uma expiração normal. Meça o quadril na parte mais larga dos glúteos. Mantenha a fita na horizontal e sem apertar.</span>
+                <span data-lang="en">While standing, measure your waist midway between the lowest palpable rib and the top of the hip bone (iliac crest). Take the reading after breathing out normally. Measure your hips at the widest part of the buttocks. Keep the tape level and snug.</span>
+              </p>
+            </details>
+          </section>
+
+          <section class="calculator-card anthropometric-results" aria-labelledby="results-heading">
+            <h2 id="results-heading">
+              <span data-lang="pt">Resultados</span>
+              <span data-lang="en">Results</span>
+            </h2>
+            <div aria-live="polite">
+              <article class="calculator-result" id="imc" data-index="bmi">
+                <h3><span data-lang="pt">IMC</span><span data-lang="en">BMI</span></h3>
+                <strong class="result-value">—</strong>
+                <span class="result-unit" hidden>kg/m²</span>
+                <p class="result-classification" hidden></p>
+              </article>
+              <article class="calculator-result" id="cintura-estatura" data-index="waistHeight">
+                <h3><span data-lang="pt">Cintura/estatura</span><span data-lang="en">Waist-to-height ratio</span></h3>
+                <strong class="result-value">—</strong>
+                <p class="result-classification" hidden></p>
+              </article>
+              <article class="calculator-result" id="cintura-quadril" data-index="waistHip">
+                <h3><span data-lang="pt">Cintura/quadril</span><span data-lang="en">Waist-to-hip ratio</span></h3>
+                <strong class="result-value">—</strong>
+                <p class="result-classification" hidden></p>
+              </article>
             </div>
-          </article>
+          </section>
+        </div>
+
+        <details class="anthropometric-details anthropometric-references">
+          <summary><span class="inline-lang" data-lang="pt">Fórmulas e referências</span><span class="inline-lang" data-lang="en">Formulas and references</span></summary>
+          <ul>
+            <li>
+              <span data-lang="pt">IMC: peso (kg) ÷ estatura (m)². OMS, Série de Relatórios Técnicos 894.</span>
+              <span data-lang="en">BMI: weight (kg) ÷ height (m)². WHO Technical Report Series 894.</span>
+            </li>
+            <li>
+              <span class="inline-lang" data-lang="pt">Cintura/estatura: cintura (cm) ÷ estatura (cm). A classificação se aplica a adultos com IMC abaixo de 35 kg/m².</span>
+              <span class="inline-lang" data-lang="en">Waist-to-height ratio: waist (cm) ÷ height (cm). Classification applies to adults with a BMI below 35 kg/m².</span>
+              <a href="https://www.nice.org.uk/guidance/ng246/chapter/Identifying-and-assessing-overweight-obesity-and-central-adiposity">NICE NG246</a>.
+            </li>
+            <li>
+              <span class="inline-lang" data-lang="pt">Cintura/quadril: cintura (cm) ÷ quadril (cm). Pontos de corte em adultos: 0,90 para o sexo masculino e 0,85 para o feminino.</span>
+              <span class="inline-lang" data-lang="en">Waist-to-hip ratio: waist (cm) ÷ hips (cm). Adult cutoffs are 0.90 for males and 0.85 for females.</span>
+              <a href="https://www.who.int/publications-detail-redirect/9789241501491"><span class="inline-lang" data-lang="pt">OMS, Tabela A1</span><span class="inline-lang" data-lang="en">WHO, Table A1</span></a>.
+            </li>
+          </ul>
+          <p>
+            <span data-lang="pt">As classificações usam os valores antes do arredondamento.</span>
+            <span data-lang="en">Classifications use values before rounding.</span>
+          </p>
+        </details>
+        <div class="privacy-note">
+          <div>
+            <strong>
+              <span data-lang="pt">Privacidade por princípio.</span>
+              <span data-lang="en">Privacy by design.</span>
+            </strong>
+            <span data-lang="pt"> Os dados informados são processados localmente no navegador e não são enviados à GEM pelas calculadoras. A hospedagem pode processar dados técnicos de acesso.</span>
+            <span data-lang="en"> The values entered are processed locally in the browser and are not sent to GEM by the calculators. The hosting provider may process technical access data.</span>
+          </div>
+        </div>
+
+        <div class="notice">
+          <span data-lang="pt">As calculadoras destinam-se à consulta rápida e ao apoio informativo. Os resultados isolados não substituem uma avaliação clínica individualizada.</span>
+          <span data-lang="en">These calculators are intended for quick reference and informational use. The results alone do not replace individualized clinical assessment.</span>
         </div>
       </div>
     </section>
@@ -277,6 +210,6 @@
   </footer>
 
   <script src="/assets/site.js"></script>
-  <script src="/assets/calculadoras.js?v=imc-compartilhado"></script>
+  <script src="/assets/calculadoras.js?v=painel-antropometrico"></script>
 </body>
 </html>

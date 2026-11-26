@@ -108,3 +108,71 @@ body.tools-page .calculator-card{scroll-margin-top:110px}
 /* Única ferramenta pública: cartão de IMC centralizado em telas amplas. */
 body.tools-page .calculator-list{max-width:780px;margin-left:auto;margin-right:auto}
 body.tools-page .calculator-form.cols-2{max-width:none}
+
+body.tools-page .anthropometric-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+  gap: 18px;
+}
+body.tools-page .anthropometric-panel > .calculator-card {
+  min-width: 0;
+}
+body.tools-page .anthropometric-instructions {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+body.tools-page .anthropometric-sex {
+  grid-column: 1 / -1;
+}
+body.tools-page .anthropometric-panel [aria-invalid="true"] {
+  border-color: #a02e2e;
+}
+body.tools-page .anthropometric-results .calculator-result {
+  scroll-margin-top: 120px;
+}
+body.tools-page .anthropometric-results h3 {
+  margin: 0;
+  color: #18543f;
+  font-size: 1rem;
+}
+body.tools-page .anthropometric-results .result-value {
+  color: #18543f;
+}
+body.tools-page .anthropometric-results .result-unit[hidden] {
+  display: none;
+}
+body.tools-page .anthropometric-results .result-classification {
+  margin: 4px 0 0;
+  font-size: .91rem;
+}
+body.tools-page .anthropometric-details {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: .91rem;
+}
+body.tools-page .anthropometric-details summary {
+  color: var(--navy);
+  font-weight: 700;
+  cursor: pointer;
+}
+body.tools-page .anthropometric-details p {
+  margin: 8px 0 0;
+}
+body.tools-page .anthropometric-references {
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+body.tools-page .anthropometric-references li + li {
+  margin-top: 6px;
+}
+@media (max-width: 720px) {
+  body.tools-page .anthropometric-panel {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+body.tools-page .privacy-note + .notice {
+  margin-top: 12px;
+}
