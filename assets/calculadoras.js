@@ -16,6 +16,10 @@
       pt: 'Para o IMC, informe uma estatura entre 50 e 250 cm.',
       en: 'For BMI, enter a height between 50 and 250 cm.'
     },
+    bmiUnderweight: {pt: 'Baixo peso.', en: 'Underweight.'},
+    bmiHealthy: {pt: 'Faixa de peso adequada.', en: 'Healthy weight range.'},
+    bmiOverweight: {pt: 'Sobrepeso.', en: 'Overweight.'},
+    bmiObesity: {pt: 'Obesidade.', en: 'Obesity.'},
     waistHeightMeasurements: {
       pt: 'Informe cintura e estatura.',
       en: 'Enter waist circumference and height.'
@@ -73,7 +77,14 @@
   }).format(value);
 
   const fields = ['weight', 'height', 'waist', 'hip'];
-  const elevatedClassifications = new Set(['waistHeightIncreased', 'waistHeightHigh', 'waistHipHigh']);
+  const classificationTones = {
+    bmiUnderweight: 'neutral',
+    bmiOverweight: 'attention',
+    bmiObesity: 'elevated',
+    waistHeightIncreased: 'elevated',
+    waistHeightHigh: 'elevated',
+    waistHipHigh: 'elevated'
+  };
   const cards = [...document.querySelectorAll('.anthropometric-results [data-index]')];
   const error = form.querySelector('.calculator-error');
   let results;
@@ -82,7 +93,12 @@
   function bmiIndex(weight, height) {
     if (weight === undefined || height === undefined) return {message: 'bmiMeasurements'};
     if (height < 50 || height > 250) return {message: 'bmiHeight'};
-    return {value: weight / Math.pow(height / 100, 2), digits: 1};
+    const value = weight / Math.pow(height / 100, 2);
+    let message = 'bmiHealthy';
+    if (value >= 30) message = 'bmiObesity';
+    else if (value >= 25) message = 'bmiOverweight';
+    else if (value < 18.5) message = 'bmiUnderweight';
+    return {value, digits: 1, message};
   }
 
   function waistHeightIndex(waist, height, bmi) {
@@ -119,7 +135,9 @@
       const unit = card.querySelector('.result-unit');
       const message = card.querySelector('.result-classification');
       const hasValue = result?.value !== undefined;
-      card.classList.toggle('is-elevated', elevatedClassifications.has(result?.message));
+      const tone = classificationTones[result?.message];
+      if (tone) card.dataset.tone = tone;
+      else delete card.dataset.tone;
       value.textContent = hasValue ? format(result.value, result.digits) : '—';
       if (unit) unit.hidden = !hasValue;
       message.hidden = !result?.message;

@@ -132,11 +132,11 @@ body.tools-page .anthropometric-results .calculator-result {
 }
 body.tools-page .anthropometric-results h3 {
   margin: 0;
-  color: #18543f;
+  color: var(--index-ink, #18543f);
   font-size: 1rem;
 }
 body.tools-page .anthropometric-results .result-value {
-  color: #18543f;
+  color: var(--index-ink, #18543f);
 }
 body.tools-page .anthropometric-results .result-unit[hidden] {
   display: none;
@@ -145,16 +145,23 @@ body.tools-page .anthropometric-results .result-classification {
   margin: 4px 0 0;
   font-size: .91rem;
 }
-body.tools-page .anthropometric-results .calculator-result.is-elevated {
+body.tools-page .anthropometric-results [data-tone="elevated"] {
+  --index-ink: #8e2430;
   background: #fff1f2;
   border-color: #e9b4bb;
 }
-body.tools-page .anthropometric-results .is-elevated h3,
-body.tools-page .anthropometric-results .is-elevated .result-value,
-body.tools-page .anthropometric-results .is-elevated .result-classification {
-  color: #8e2430;
+body.tools-page .anthropometric-results [data-tone="attention"] {
+  --index-ink: #75470b;
+  background: #fff7e7;
+  border-color: #e7ca95;
 }
-body.tools-page .anthropometric-results .is-elevated .result-classification {
+body.tools-page .anthropometric-results [data-tone="neutral"] {
+  --index-ink: #465466;
+  background: #f4f6f8;
+  border-color: #d5dce3;
+}
+body.tools-page .anthropometric-results [data-tone] .result-classification {
+  color: var(--index-ink);
   font-weight: 700;
 }
 body.tools-page .anthropometric-details {
