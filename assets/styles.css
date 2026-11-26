@@ -145,6 +145,18 @@ body.tools-page .anthropometric-results .result-classification {
   margin: 4px 0 0;
   font-size: .91rem;
 }
+body.tools-page .anthropometric-results .calculator-result.is-elevated {
+  background: #fff1f2;
+  border-color: #e9b4bb;
+}
+body.tools-page .anthropometric-results .is-elevated h3,
+body.tools-page .anthropometric-results .is-elevated .result-value,
+body.tools-page .anthropometric-results .is-elevated .result-classification {
+  color: #8e2430;
+}
+body.tools-page .anthropometric-results .is-elevated .result-classification {
+  font-weight: 700;
+}
 body.tools-page .anthropometric-details {
   margin-top: 16px;
   color: var(--muted);

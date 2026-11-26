@@ -73,6 +73,7 @@
   }).format(value);
 
   const fields = ['weight', 'height', 'waist', 'hip'];
+  const elevatedClassifications = new Set(['waistHeightIncreased', 'waistHeightHigh', 'waistHipHigh']);
   const cards = [...document.querySelectorAll('.anthropometric-results [data-index]')];
   const error = form.querySelector('.calculator-error');
   let results;
@@ -118,6 +119,7 @@
       const unit = card.querySelector('.result-unit');
       const message = card.querySelector('.result-classification');
       const hasValue = result?.value !== undefined;
+      card.classList.toggle('is-elevated', elevatedClassifications.has(result?.message));
       value.textContent = hasValue ? format(result.value, result.digits) : '—';
       if (unit) unit.hidden = !hasValue;
       message.hidden = !result?.message;
