@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Calculadora de IMC | GEM Medicina e Pesquisa</title>
-  <meta name="description" content="Calculadora de IMC para consulta rápida, com referência científica e processamento local dos valores.">
+  <title>Ferramentas antropométricas | GEM Medicina e Pesquisa</title>
+  <meta name="description" content="Calculadoras de IMC, cintura/estatura e abdômen/quadril, com processamento local dos valores.">
   <link rel="canonical" href="https://gemmedicina.com.br/ferramentas/">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="GEM Medicina e Pesquisa">
-  <meta property="og:title" content="Calculadora de IMC | GEM Medicina e Pesquisa">
-  <meta property="og:description" content="Calculadora de IMC para consulta rápida, com referência científica e processamento local dos valores.">
+  <meta property="og:title" content="Ferramentas antropométricas | GEM Medicina e Pesquisa">
+  <meta property="og:description" content="Calculadoras de IMC, cintura/estatura e abdômen/quadril, com processamento local dos valores.">
   <meta property="og:url" content="https://gemmedicina.com.br/ferramentas/">
   <meta property="og:locale" content="pt_BR">
 
@@ -45,8 +45,8 @@
           <span class="inline-lang" data-lang="en">Home</span>
         </a>
         <a href="/ferramentas/" aria-current="page">
-          <span class="inline-lang" data-lang="pt">IMC</span>
-          <span class="inline-lang" data-lang="en">BMI</span>
+          <span class="inline-lang" data-lang="pt">Ferramentas</span>
+          <span class="inline-lang" data-lang="en">Tools</span>
         </a>
         <a href="/contato/">
           <span class="inline-lang" data-lang="pt">Contato</span>
@@ -65,12 +65,12 @@
           <span data-lang="en">Quick reference</span>
         </p>
         <h1>
-          <span data-lang="pt">Calculadora de IMC</span>
-          <span data-lang="en">BMI calculator</span>
+          <span data-lang="pt">Ferramentas antropométricas</span>
+          <span data-lang="en">Anthropometric tools</span>
         </h1>
         <p class="lead">
-          <span data-lang="pt">Cálculo simples e objetivo do índice de massa corporal, com fórmula e referência científica identificadas.</span>
-          <span data-lang="en">A simple body mass index calculation, with its formula and scientific reference identified.</span>
+          <span data-lang="pt">Calcule o IMC, a relação cintura/estatura e a relação abdômen/quadril.</span>
+          <span data-lang="en">Calculate BMI, the waist-to-height ratio and the abdomen-to-hip ratio.</span>
         </p>
 
 
@@ -80,8 +80,8 @@
               <span data-lang="pt">Privacidade por princípio.</span>
               <span data-lang="en">Privacy by design.</span>
             </strong>
-            <span data-lang="pt"> Peso e altura são processados localmente no navegador e não são enviados à GEM pelo código desta calculadora. A hospedagem pode processar dados técnicos de acesso.</span>
-            <span data-lang="en"> Weight and height are processed locally in the browser and are not sent to GEM by this calculator’s code. The hosting provider may process technical access data.</span>
+            <span data-lang="pt"> As medidas são processadas localmente no navegador e não são enviadas à GEM pelas calculadoras. A hospedagem pode processar dados técnicos de acesso.</span>
+            <span data-lang="en"> Measurements are processed locally in the browser and are not sent to GEM by the calculators. The hosting provider may process technical access data.</span>
           </div>
         </div>
       </div>
@@ -90,8 +90,8 @@
     <section class="page-body alt">
       <div class="container">
         <div class="notice">
-          <span data-lang="pt"><strong>Sobre esta ferramenta.</strong> A calculadora de IMC destina-se à consulta rápida e ao apoio informativo. O resultado é obtido a partir dos valores informados e de uma fórmula científica identificada. Isoladamente, o IMC não constitui diagnóstico ou recomendação de conduta e não substitui a avaliação clínica individualizada.</span>
-          <span data-lang="en"><strong>About this tool.</strong> The BMI calculator is intended for quick reference and informational support. Its result is obtained from the entered values and an identified scientific formula. BMI alone does not constitute a diagnosis or management recommendation and does not replace individualized clinical assessment.</span>
+          <span data-lang="pt">As calculadoras destinam-se à consulta rápida e ao apoio informativo. Os resultados isolados não substituem uma avaliação clínica individualizada.</span>
+          <span data-lang="en">These calculators are intended for quick reference and informational use. The results alone do not replace individualized clinical assessment.</span>
         </div>
 
         <div class="calculator-list">
@@ -137,6 +137,80 @@
             </div>
           </article>
 
+          <article class="calculator-card" id="cintura-estatura">
+            <header>
+              <h2>
+                <span data-lang="pt">Relação cintura/estatura</span>
+                <span data-lang="en">Waist-to-height ratio</span>
+              </h2>
+              <p>
+                <span data-lang="pt">Circunferência da cintura (cm) ÷ estatura (cm).</span>
+                <span data-lang="en">Waist circumference (cm) ÷ height (cm).</span>
+              </p>
+            </header>
+
+            <form class="calculator" data-calculator="waistHeight" novalidate autocomplete="off">
+              <div class="calculator-form cols-2">
+                <div class="field">
+                  <label for="waist-height-waist"><span class="inline-lang" data-lang="pt">Circunferência da cintura</span><span class="inline-lang" data-lang="en">Waist circumference</span> (cm)</label>
+                  <input id="waist-height-waist" name="waist" type="number" inputmode="decimal" min="0.1" step="any" required>
+                </div>
+                <div class="field">
+                  <label for="waist-height-height"><span class="inline-lang" data-lang="pt">Estatura</span><span class="inline-lang" data-lang="en">Height</span> (cm)</label>
+                  <input id="waist-height-height" name="height" type="number" inputmode="decimal" min="0.1" step="any" required>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="button" type="submit" disabled><span data-lang="pt">Calcular</span><span data-lang="en">Calculate</span></button>
+                <button class="button secondary" type="reset"><span data-lang="pt">Limpar</span><span data-lang="en">Clear</span></button>
+              </div>
+              <p class="calculator-error" role="alert" aria-live="polite"></p>
+              <div class="calculator-result" role="status" aria-live="polite" hidden>
+                <span class="result-label"><span data-lang="pt">Resultado</span><span data-lang="en">Result</span></span>
+                <strong class="result-value"></strong>
+              </div>
+            </form>
+
+            <div class="reference">
+              <strong><span data-lang="pt">Referência:</span><span data-lang="en">Reference:</span></strong>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6555739/">Changes in distributions of waist circumference, waist-to-hip ratio and waist-to-height ratio over an 18-year period among Chinese adults</a>.
+            </div>
+          </article>
+
+          <article class="calculator-card" id="abdomen-quadril">
+            <header>
+              <h2>
+                <span data-lang="pt">Relação abdômen/quadril</span>
+                <span data-lang="en">Abdomen-to-hip ratio</span>
+              </h2>
+              <p>
+                <span data-lang="pt">Circunferência do abdômen (cm) ÷ circunferência do quadril (cm).</span>
+                <span data-lang="en">Abdominal circumference (cm) ÷ hip circumference (cm).</span>
+              </p>
+            </header>
+
+            <form class="calculator" data-calculator="abdomenHip" novalidate autocomplete="off">
+              <div class="calculator-form cols-2">
+                <div class="field">
+                  <label for="abdomen-hip-abdomen"><span class="inline-lang" data-lang="pt">Circunferência do abdômen</span><span class="inline-lang" data-lang="en">Abdominal circumference</span> (cm)</label>
+                  <input id="abdomen-hip-abdomen" name="abdomen" type="number" inputmode="decimal" min="0.1" step="any" required>
+                </div>
+                <div class="field">
+                  <label for="abdomen-hip-hip"><span class="inline-lang" data-lang="pt">Circunferência do quadril</span><span class="inline-lang" data-lang="en">Hip circumference</span> (cm)</label>
+                  <input id="abdomen-hip-hip" name="hip" type="number" inputmode="decimal" min="0.1" step="any" required>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="button" type="submit" disabled><span data-lang="pt">Calcular</span><span data-lang="en">Calculate</span></button>
+                <button class="button secondary" type="reset"><span data-lang="pt">Limpar</span><span data-lang="en">Clear</span></button>
+              </div>
+              <p class="calculator-error" role="alert" aria-live="polite"></p>
+              <div class="calculator-result" role="status" aria-live="polite" hidden>
+                <span class="result-label"><span data-lang="pt">Resultado</span><span data-lang="en">Result</span></span>
+                <strong class="result-value"></strong>
+              </div>
+            </form>
+          </article>
         </div>
       </div>
     </section>
@@ -152,7 +226,7 @@
       <div class="footer-links">
         <strong><span data-lang="pt">Institucional</span><span data-lang="en">Institutional</span></strong>
         <a href="/"><span data-lang="pt">Início</span><span data-lang="en">Home</span></a>
-        <a href="/ferramentas/"><span data-lang="pt">Calculadora de IMC</span><span data-lang="en">BMI calculator</span></a>
+        <a href="/ferramentas/"><span data-lang="pt">Ferramentas antropométricas</span><span data-lang="en">Anthropometric tools</span></a>
       </div>
       <div class="footer-links">
         <strong><span data-lang="pt">Contato</span><span data-lang="en">Contact</span></strong>

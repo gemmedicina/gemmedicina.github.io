@@ -10,12 +10,28 @@
 
   const text=(key)=>messages[key][isEnglish()?'en':'pt'];
 
+  function measurement(form,name){
+    const input=form.elements[name];
+    if(!input.validity.valid||!Number.isFinite(input.valueAsNumber)) throw new Error(text('required'));
+    return input.valueAsNumber;
+  }
+
   const calculators={
     bmi(form){
       const weight=number(form,'weight');
       const height=number(form,'height');
       if(!Number.isFinite(weight)||!Number.isFinite(height)||weight<1||weight>500||height<50||height>250) throw new Error(text('bmi'));
       return {value:weight/Math.pow(height/100,2),digits:1};
+    },
+    waistHeight(form){
+      const waist=measurement(form,'waist');
+      const height=measurement(form,'height');
+      return {value:waist/height,digits:2};
+    },
+    abdomenHip(form){
+      const abdomen=measurement(form,'abdomen');
+      const hip=measurement(form,'hip');
+      return {value:abdomen/hip,digits:2};
     }
   };
 
@@ -30,11 +46,14 @@
       result.hidden=true;
       try{
         const output=calculators[form.dataset.calculator](form);
+        if(!Number.isFinite(output.value)) throw new Error(text('required'));
         value.textContent=format(output.value,output.digits);
         result.dataset.raw=String(output.value);
         result.dataset.digits=String(output.digits);
         result.hidden=false;
       }catch(problem){
+        delete result.dataset.raw;
+        delete result.dataset.digits;
         error.textContent=problem.message||text('required');
       }
     });
@@ -46,6 +65,8 @@
       delete result.dataset.raw;
       delete result.dataset.digits;
     });
+
+    form.querySelector('button[type="submit"]').disabled=false;
   });
 
   document.querySelectorAll('.lang-toggle').forEach(button=>button.addEventListener('click',()=>{
