@@ -5,7 +5,16 @@
 
   const messages={
     required:{pt:'Preencha todos os campos com valores válidos.',en:'Complete all fields with valid values.'},
-    bmi:{pt:'Informe peso entre 1 e 500 kg e altura entre 50 e 250 cm.',en:'Enter weight between 1 and 500 kg and height between 50 and 250 cm.'}
+    bmi:{pt:'Informe peso entre 1 e 500 kg e altura entre 50 e 250 cm.',en:'Enter weight between 1 and 500 kg and height between 50 and 250 cm.'},
+    bmiMissing:{pt:'Informe o IMC para obter a classificação.',en:'Enter BMI to see the classification.'},
+    bmiOutsideRange:{pt:'A classificação do NICE se aplica a adultos com IMC abaixo de 35 kg/m².',en:'The NICE classification applies to adults with a BMI below 35 kg/m².'},
+    waistHeightBelowRange:{pt:'Abaixo das faixas de classificação do NICE.',en:'Below the NICE classification ranges.'},
+    waistHeightHealthy:{pt:'Adiposidade central na faixa saudável.',en:'Central adiposity in the healthy range.'},
+    waistHeightIncreased:{pt:'Adiposidade central aumentada.',en:'Increased central adiposity.'},
+    waistHeightHigh:{pt:'Adiposidade central alta.',en:'High central adiposity.'},
+    sexMissing:{pt:'Informe o sexo para obter a classificação.',en:'Select sex to see the classification.'},
+    waistHipBelowCutoff:{pt:'Abaixo do ponto de corte de referência.',en:'Below the reference cutoff.'},
+    waistHipHigh:{pt:'Relação elevada, associada a maior risco de complicações metabólicas.',en:'Elevated ratio, associated with higher risk of metabolic complications.'}
   };
 
   const text=(key)=>messages[key][isEnglish()?'en':'pt'];
@@ -26,18 +35,34 @@
     waistHeight(form){
       const waist=measurement(form,'waist');
       const height=measurement(form,'height');
-      return {value:waist/height,digits:2};
+      const value=waist/height;
+      const bmiInput=form.elements.bmi;
+      let classification='bmiMissing';
+      if(bmiInput.value!==''||bmiInput.validity.badInput){
+        const bmi=measurement(form,'bmi');
+        if(bmi>=35) classification='bmiOutsideRange';
+        else if(value>=0.60) classification='waistHeightHigh';
+        else if(value>=0.50) classification='waistHeightIncreased';
+        else if(value>=0.40) classification='waistHeightHealthy';
+        else classification='waistHeightBelowRange';
+      }
+      return {value,digits:3,classification};
     },
-    abdomenHip(form){
-      const abdomen=measurement(form,'abdomen');
+    waistHip(form){
+      const waist=measurement(form,'waist');
       const hip=measurement(form,'hip');
-      return {value:abdomen/hip,digits:2};
+      const value=waist/hip;
+      const sex=form.elements.sex.value;
+      const cutoff={female:0.85,male:0.90}[sex];
+      const classification=cutoff===undefined?'sexMissing':value>=cutoff?'waistHipHigh':'waistHipBelowCutoff';
+      return {value,digits:3,classification};
     }
   };
 
   document.querySelectorAll('.calculator').forEach(form=>{
     const result=form.querySelector('.calculator-result');
     const value=result.querySelector('.result-value');
+    const classification=result.querySelector('.result-classification');
     const error=form.querySelector('.calculator-error');
 
     form.addEventListener('submit',event=>{
@@ -50,10 +75,15 @@
         value.textContent=format(output.value,output.digits);
         result.dataset.raw=String(output.value);
         result.dataset.digits=String(output.digits);
+        if(classification){
+          result.dataset.classification=output.classification;
+          classification.textContent=text(output.classification);
+        }
         result.hidden=false;
       }catch(problem){
         delete result.dataset.raw;
         delete result.dataset.digits;
+        delete result.dataset.classification;
         error.textContent=problem.message||text('required');
       }
     });
@@ -64,14 +94,28 @@
       value.textContent='';
       delete result.dataset.raw;
       delete result.dataset.digits;
+      delete result.dataset.classification;
+      if(classification) classification.textContent='';
     });
 
     form.querySelector('button[type="submit"]').disabled=false;
   });
 
+  function translateSexOptions(){
+    const language=isEnglish()?'en':'pt';
+    document.querySelectorAll('option[data-label-pt]').forEach(option=>{
+      option.textContent=option.getAttribute('data-label-'+language);
+    });
+  }
+
+  translateSexOptions();
   document.querySelectorAll('.lang-toggle').forEach(button=>button.addEventListener('click',()=>{
+    translateSexOptions();
     document.querySelectorAll('.calculator-result[data-raw]').forEach(result=>{
       result.querySelector('.result-value').textContent=format(Number(result.dataset.raw),Number(result.dataset.digits));
+      if(result.dataset.classification){
+        result.querySelector('.result-classification').textContent=text(result.dataset.classification);
+      }
     });
   }));
 })();
