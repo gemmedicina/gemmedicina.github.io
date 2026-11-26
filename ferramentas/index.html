@@ -151,14 +151,14 @@
                 <span data-lang="pt">Em pé, meça a cintura no ponto médio entre a última costela palpável e o topo do osso do quadril (crista ilíaca). Mantenha a fita na horizontal, sem apertar, e leia ao fim de uma expiração normal.</span>
                 <span data-lang="en">While standing, measure your waist midway between the lowest palpable rib and the top of the hip bone (iliac crest). Keep the tape level and snug, and take the reading after breathing out normally.</span>
               </p>
-              <p id="waist-height-scope">
-                <span data-lang="pt">A classificação usa as mesmas faixas para ambos os sexos em adultos com IMC abaixo de 35 kg/m².</span>
-                <span data-lang="en">The same classification ranges apply to adults of both sexes with a BMI below 35 kg/m².</span>
+              <p>
+                <span data-lang="pt">Para classificar o resultado, use o peso informado na calculadora de IMC acima e a mesma estatura nos dois formulários. As faixas se aplicam a adultos com IMC abaixo de 35 kg/m².</span>
+                <span data-lang="en">To classify the result, enter your weight in the BMI calculator above and use the same height in both forms. The ranges apply to adults with a BMI below 35 kg/m².</span>
               </p>
             </header>
 
             <form class="calculator" data-calculator="waistHeight" novalidate autocomplete="off">
-              <div class="calculator-form cols-3">
+              <div class="calculator-form cols-2">
                 <div class="field">
                   <label for="waist-height-waist"><span class="inline-lang" data-lang="pt">Circunferência da cintura</span><span class="inline-lang" data-lang="en">Waist circumference</span> (cm)</label>
                   <input id="waist-height-waist" name="waist" type="number" inputmode="decimal" min="0.1" step="any" aria-describedby="waist-height-measurement" required>
@@ -166,10 +166,6 @@
                 <div class="field">
                   <label for="waist-height-height"><span class="inline-lang" data-lang="pt">Estatura</span><span class="inline-lang" data-lang="en">Height</span> (cm)</label>
                   <input id="waist-height-height" name="height" type="number" inputmode="decimal" min="0.1" step="any" required>
-                </div>
-                <div class="field">
-                  <label for="waist-height-bmi"><span class="inline-lang" data-lang="pt">IMC (kg/m²) · opcional</span><span class="inline-lang" data-lang="en">BMI (kg/m²) · optional</span></label>
-                  <input id="waist-height-bmi" name="bmi" type="number" inputmode="decimal" min="0.1" step="any" aria-describedby="waist-height-scope">
                 </div>
               </div>
               <div class="form-actions">
@@ -281,6 +277,6 @@
   </footer>
 
   <script src="/assets/site.js"></script>
-  <script src="/assets/calculadoras.js?v=classificacao"></script>
+  <script src="/assets/calculadoras.js?v=imc-compartilhado"></script>
 </body>
 </html>
