@@ -16,7 +16,7 @@
   <meta property="og:locale" content="pt_BR">
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/styles.css?v=faixas-imc">
+  <link rel="stylesheet" href="/assets/styles.css?v=guia-medidas">
 </head>
 
 <body class="tools-page">
@@ -114,10 +114,25 @@
             </form>
             <details class="anthropometric-details">
               <summary><span class="inline-lang" data-lang="pt">Como medir</span><span class="inline-lang" data-lang="en">How to measure</span></summary>
-              <p>
-                <span data-lang="pt">Em pé, meça a cintura no ponto médio entre a última costela palpável e o topo do osso do quadril (crista ilíaca). Leia ao fim de uma expiração normal. Meça o quadril na parte mais larga dos glúteos. Mantenha a fita na horizontal e sem apertar.</span>
-                <span data-lang="en">While standing, measure your waist midway between the lowest palpable rib and the top of the hip bone (iliac crest). Take the reading after breathing out normally. Measure your hips at the widest part of the buttocks. Keep the tape level and snug.</span>
-              </p>
+              <div class="measurement-guide">
+                <div>
+                  <p>
+                    <span data-lang="pt"><strong class="measurement-waist">CC · Cintura.</strong> Meça em pé, no ponto médio entre a última costela palpável e a crista ilíaca, ao fim de uma expiração normal.</span>
+                    <span data-lang="en"><strong class="measurement-waist">WC · Waist.</strong> Measure while standing, midway between the lowest palpable rib and the iliac crest, after breathing out normally.</span>
+                  </p>
+                  <p>
+                    <span data-lang="pt"><strong class="measurement-hip">CQ · Quadril.</strong> Meça na maior circunferência dos glúteos. Nas duas medidas, mantenha a fita na horizontal e sem apertar.</span>
+                    <span data-lang="en"><strong class="measurement-hip">HC · Hips.</strong> Measure around the widest part of the buttocks. For both measurements, keep the tape level and snug.</span>
+                  </p>
+                  <p>
+                    <span data-lang="pt">A calculadora segue OMS/NICE. A ISAK usa a menor circunferência entre as costelas e a crista ilíaca ou o ponto médio quando não há estreitamento evidente.</span>
+                    <span data-lang="en">The calculator follows WHO/NICE. ISAK uses the narrowest circumference between the ribs and the iliac crest, or the midpoint if there is no clear narrowing.</span>
+                  </p>
+                </div>
+                <figure class="measurement-figure" hidden>
+                  <img data-src="/assets/guia-medidas.jpg" width="1536" height="1024" loading="lazy" decoding="async" alt="">
+                </figure>
+              </div>
             </details>
           </section>
 
@@ -219,6 +234,6 @@
   </footer>
 
   <script src="/assets/site.js"></script>
-  <script src="/assets/calculadoras.js?v=faixas-imc"></script>
+  <script src="/assets/calculadoras.js?v=guia-medidas"></script>
 </body>
 </html>

@@ -87,6 +87,9 @@
   };
   const cards = [...document.querySelectorAll('.anthropometric-results [data-index]')];
   const error = form.querySelector('.calculator-error');
+  const guide = document.querySelector('.measurement-guide');
+  const figure = guide.querySelector('.measurement-figure');
+  const illustration = figure.querySelector('img');
   let results;
   let invalidMeasurements = false;
 
@@ -153,6 +156,17 @@
     renderResults();
   }
 
+  function showMeasurementModel(sex) {
+    if (sex !== 'female' && sex !== 'male') {
+      delete guide.dataset.model;
+      figure.hidden = true;
+      return;
+    }
+    guide.dataset.model = sex;
+    figure.hidden = false;
+    if (!illustration.hasAttribute('src')) illustration.src = illustration.dataset.src;
+  }
+
   form.addEventListener('submit', event => {
     event.preventDefault();
     invalidMeasurements = false;
@@ -178,6 +192,8 @@
   });
   form.addEventListener('input', clearResults);
   form.addEventListener('reset', clearResults);
+  form.addEventListener('reset', () => showMeasurementModel(''));
+  form.elements.sex.addEventListener('change', () => showMeasurementModel(form.elements.sex.value));
   form.querySelector('button[type="submit"]').disabled = false;
 
   function translateSexOptions() {
@@ -187,6 +203,7 @@
     }
   }
 
+  showMeasurementModel(form.elements.sex.value);
   translateSexOptions();
   document.querySelectorAll('.lang-toggle').forEach(button => button.addEventListener('click', () => {
     translateSexOptions();
